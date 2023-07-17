@@ -71,7 +71,8 @@ export const globalStyles = globalCss({
   "*": {
     margin: 0,
     padding: 0,
-    fontFamily: "'Inter', sans-serif",
+    // fontFamily: "'Inter', sans-serif",
+    fontFamily: "'Poppins', sans-serif",
     boxSizing: "border-box",
   },
   html: {
@@ -84,11 +85,11 @@ export const GlobalStyle = ({ children }: GlobalStyleProps): JSX.Element => {
 
   const theme = createTheme({
     colors: {
-      brand1: "#623CEA",
-      brand2: "#311E75",
+      brand1: "#A239CA",
+      brand2: "#4717F6",
 
-      grey0: "#0A0A0B",
-      grey1: "#121214",
+      grey0: "#0E0B16",
+      grey1: "#0a0a10",
       grey2: "#868E96",
       grey3: "#E9ECEF",
       grey4: "#F8F9FA",
@@ -98,8 +99,8 @@ export const GlobalStyle = ({ children }: GlobalStyleProps): JSX.Element => {
       socialFacebook: "#506CCF",
       socialLinkedin: "#0E76A8",
 
-      whiteFixed: "#ffffff",
-      mode: "#ffffff",
+      whiteFixed: "#E7DFDD",
+      mode: "#E7DFDD",
     },
     sizes: {
       container: "75rem",

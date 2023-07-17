@@ -44,18 +44,18 @@ export const Home = (): JSX.Element => {
                 width={"48px"}
                 height={"48px"}
               />
-              <Text color="grey4">Hello, my name is {userData.nameUser}</Text>
+              <Text color="grey4">Ola, meu nome é {userData.nameUser}</Text>
             </Flex>
             <Text as="h1" type="heading1" color="grey5">
-            I{" "}
+            Eu{" "}
               <Text as="span" type="heading1" color="brand1">
-                love
+                adoro
               </Text>{" "}
-              creating and{" "}
+              criar e{" "}
               <Text as="span" type="heading1" color="brand1">
-                developing
+                desenvolver
               </Text>{" "}
-              projects
+              projetos
             </Text>
             <Text type="body1" color="grey2">
               Discover here in this environment, created especially for you, all

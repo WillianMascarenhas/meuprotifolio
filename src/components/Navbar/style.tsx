@@ -37,6 +37,38 @@ export const LogoTipoText = styled("span", {
 });
 
 export const NavbarLinks = styled(Flex, {
+  "a": {
+    fontFamily: "inherit",
+    fontWeight: 800,
+    textDecoration: "none",
+    cursor: "pointer",
+    position: "relative",
+    border: "none",
+    background: "none",
+    transitionTimingFunction: "cubic-bezier(0.25, 0.8, 0.25, 1)",
+    transitionDuration: "400ms",
+    transitionProperty: "color",
+    "&:focus, &:hover": {
+      color: "$brand1",
+      "&:after": {
+        width: "100%",
+        left: "0%",
+      },
+    },
+    "&:after": {
+      content: '""',
+      pointerEvents: "none",
+      bottom: "-2px",
+      left: "50%",
+      position: "absolute",
+      width: "0%",
+      height: "2px",
+      backgroundColor: "$brand1",
+      transitionTimingFunction: "cubic-bezier(0.25, 0.8, 0.25, 1)",
+      transitionDuration: "400ms",
+      transitionProperty: "width, left",
+    },
+  },
   "@mobile": {
     marginTop: "$3",
     flexDirection: "column",

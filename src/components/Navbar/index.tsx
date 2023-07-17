@@ -12,7 +12,7 @@ import {
 
 import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
-import { Button } from "@/styles/Buttons";
+import { Button, Link } from "@/styles/Buttons";
 import { Container, Flex } from "@/styles/Global";
 
 export interface MenuButtonOpen {
@@ -60,18 +60,18 @@ export const NavBar = (): JSX.Element => {
 export const NavLinks = (): JSX.Element => {
   return (
     <NavbarLinks>
-      <Button type="btLink" as="a" color="grey4" href={`#home`}>
+      <Link type="btLink" as="a" color="grey4" href={`#home`}>
         Home
-      </Button>
-      <Button type="btLink" as="a" color="grey4" href={`#projects`}>
+      </Link>
+      <Link type="btLink" as="a" color="grey4" href={`#projects`}>
         Projects
-      </Button>
-      <Button type="btLink" as="a" color="grey4" href={`#contact`}>
+      </Link>
+      <Link type="btLink" as="a" color="grey4" href={`#contact`}>
         Contact
-      </Button>
-      <Button type="btLink" as="a" color="grey4" href={`#social-media`}>
+      </Link>
+      <Link type="btLink" as="a" color="grey4" href={`#social-media`}>
         Social Media
-      </Button>
+      </Link>
     </NavbarLinks>
   );
 };
