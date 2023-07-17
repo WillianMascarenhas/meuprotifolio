@@ -29,7 +29,7 @@ import {
 
 export const Home = (): JSX.Element => {
   const gihubUrl = `https://github.com/${userData.githubUser}`;
-  const portfolioUrl = `https://github.com/${userData.githubUser}/my-portfolio`;
+  const portfolioUrl = `https://github.com/${userData.githubUser}/meuprotifolio`;
 
   return (
     <main id="home">
@@ -47,9 +47,9 @@ export const Home = (): JSX.Element => {
               <Text color="grey4">Ola, meu nome é {userData.nameUser}</Text>
             </Flex>
             <Text as="h1" type="heading1" color="grey5">
-            Eu{" "}
+            Eu sou um desenvolvedor Web que{" "}
               <Text as="span" type="heading1" color="brand1">
-                adoro
+                ama
               </Text>{" "}
               criar e{" "}
               <Text as="span" type="heading1" color="brand1">
@@ -63,10 +63,10 @@ export const Home = (): JSX.Element => {
             </Text>
             <HeaderButtonsArea>
               <Button as="a" type="primary" href="#projects">
-                See Projects
+                Ver projetos
               </Button>
               <Button as="a" type="outline" target="_blank" href={portfolioUrl}>
-                See my portfolio source code
+                Ver portifólio
               </Button>
               <Button
                 color="grey5"
@@ -92,13 +92,13 @@ export const Home = (): JSX.Element => {
           <ProjectAreaWrapperColumns>
             <ProjectsAreaSocialMediaMessage>
               <Text as="h2" type="heading4" color="grey4">
-                My projects
+                Meu projetos:
               </Text>
               <Text as="p" type="body1" color="grey2">
-                Some of my{" "}
-                <Text as="span" color="brand5">
+                Alguns dos meus projetos{" "}
+                {/* <Text as="span" color="brand1">
                   side projects
-                </Text>
+                </Text> */}
               </Text>
             </ProjectsAreaSocialMediaMessage>
             <ProjectsAreaContent>
