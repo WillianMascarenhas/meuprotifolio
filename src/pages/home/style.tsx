@@ -9,9 +9,12 @@ import backgroundImg from "@/public/static/img/background/header-bg.svg";
 import dots from "@/public/static/img/background/dots.svg";
 
 export const Header = styled("header", {
+  
+
   backgroundColor: "$grey1",
+  // backgroundColor: "aqua",
   padding: "12rem 0 8rem 0",
-  backgroundImage: `url(${backgroundImg})`,
+  // backgroundImage: `url(${backgroundImg})`,
   backgroundRepeat: "no-repeat",
   backgroundPosition: "right",
   backgroundAttachment: "fixed",
@@ -30,12 +33,12 @@ export const Header = styled("header", {
 
 export const HeaderContent = styled("div", {
   maxWidth: "100%",
-  width: "36rem",
+  width: "100%",
   display: "flex",
   flexDirection: "column",
   gap: "$2",
   "@tablet": {
-    width: "36rem",
+    width: "100%",
   },
   "@mobile": {
     width: "100%",
@@ -79,8 +82,11 @@ export const StackSection = styled("div", {
 });
 
 export const StackCards = styled("div", {
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr 1fr 1fr",
+  // display: "grid",
+  // gridTemplateColumns: "1fr 1fr 1fr 1fr",
+  display: "flex",
+  flexWrap:"wrap",
+  justifyContent: "center",
   padding: "3rem 0",
   gap: "6rem",
   marginTop: "$4",
