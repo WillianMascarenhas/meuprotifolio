@@ -9,8 +9,6 @@ import backgroundImg from "@/public/static/img/background/header-bg.svg";
 import dots from "@/public/static/img/background/dots.svg";
 
 export const Header = styled("header", {
-  
-
   backgroundColor: "$grey1",
   // backgroundColor: "aqua",
   padding: "12rem 0 8rem 0",
@@ -32,6 +30,7 @@ export const Header = styled("header", {
 });
 
 export const HeaderContent = styled("div", {
+  marginTop: "3rem",
   maxWidth: "100%",
   width: "100%",
   display: "flex",
@@ -39,9 +38,11 @@ export const HeaderContent = styled("div", {
   gap: "$2",
   "@tablet": {
     width: "100%",
+    marginTop: "0rem",
   },
   "@mobile": {
     width: "100%",
+    marginTop: "0rem",
   },
 });
 
@@ -71,8 +72,17 @@ export const HeaderButtonsArea = styled(Flex, {
 export const UserImage = styled("img", {
   borderRadius: "50%",
   "@mobile": {
-    width: "2.25rem",
-    height: "2.25rem",
+    width: "12.25rem",
+    height: "12.25rem",
+    marginTop: "55px"
+  },
+});
+
+export const LogoImage = styled("img", {
+  borderRadius: "50%",
+  "@mobile": {
+    width: "4.25rem",
+    height: "4.25rem",
   },
 });
 
@@ -85,11 +95,11 @@ export const StackCards = styled("div", {
   // display: "grid",
   // gridTemplateColumns: "1fr 1fr 1fr 1fr",
   display: "flex",
-  flexWrap:"wrap",
+  flexWrap: "wrap",
   justifyContent: "center",
-  padding: "3rem 0",
+  padding: "3.8rem 0",
   gap: "6rem",
-  marginTop: "$4",
+  // marginTop: "10rem",
 
   "@tablet": {
     gridTemplateColumns: "1fr 1fr 1fr",
@@ -148,5 +158,44 @@ export const ProjectAreaWrapperColumns = styled("div", {
   alignItems: "flex-start",
   "@mobile": {
     flexDirection: "column",
+  },
+});
+
+
+export const HeaderTextImg = styled("div", {
+  display: "flex",
+  gap: "12rem",
+  "@mobile": {
+    // display: "flex",
+    gap: "0",
+    flexDirection: "column-reverse",
+  },
+});
+
+export const HeaderText = styled("div", {
+  width: "75%",
+  display: "flex",
+  flexDirection: "column",
+  gap: "0.7rem",
+
+  "@mobile": {
+    marginTop:"5rem"
+  },
+});
+
+export const HeaderImg = styled("div", {
+  width: "22%",
+  marginTop: "-50px",
+
+  "@mobile": {},
+});
+
+export const StackMargintop = styled("div", {
+  marginTop: "17rem",
+  "@mobile": {
+    marginTop: "3rem",
+  },
+  "@tablet": {
+    marginTop: "3rem",gridTemplateColumns: "1fr 1fr 1fr",
   },
 });

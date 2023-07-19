@@ -25,10 +25,15 @@ import {
   ProjectsAreaSocialMediaMessage,
   ProjectAreaWrapperColumns,
   ProjectsAreaContent,
+  HeaderText,
+  StackMargintop,
+  HeaderTextImg,
+  HeaderImg,
 } from "./style";
 
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
+import { MouseParallax, ScrollParallax } from "react-just-parallax";
 
 export const Home = (): JSX.Element => {
   const gihubUrl = `https://github.com/${userData.githubUser}`;
@@ -38,15 +43,13 @@ export const Home = (): JSX.Element => {
   useEffect(() => {
     const typed = new Typed(textAnimated.current, {
       strings: [
-        // 'Eu sou um desenvolvedor Web que, ama <span ref={textAnimatedSpan} class="name"></span> novos projetos',
-        // `Me chamo <span class="name">${userData.nameUser}</span>.`
         "criar",
         "desenvolver",
         "participar de",
-        "ajudar em"
+        "ajudar em",
       ],
-      typeSpeed: 70,
-      backSpeed: 60,
+      typeSpeed: 80,
+      backSpeed: 75,
       loop: true,
     });
 
@@ -61,31 +64,42 @@ export const Home = (): JSX.Element => {
         <Container>
           <HeaderContent>
             <Flex>
-              <UserImage
-                src={`https://github.com/${userData.githubUser}.png`}
-                alt={userData.nameUser}
-                title={userData.nameUser}
-                width={"48px"}
-                height={"48px"}
-              />
-              <Text color="grey4">Ola, meu nome é {userData.nameUser}</Text>
+              <HeaderTextImg>
+                <HeaderText>
+                  <Text as="h2" type="heading3" color="grey5">Olá seja bem vindo!</Text>
+                  <Text as="h1" type="heading2" color="grey5">
+                    Sou um desenvolvedor Web Fullstack que ama{" "}
+                    <div>
+                      <TextSpan
+                        ref={textAnimated}
+                        as="span"
+                        type="heading2"
+                        color="brand1"
+                      />{" "}
+                      novos projetos
+                    </div>
+                  </Text>
+                  <Text type="body1" color="grey2">
+                    Discover here in this environment, created especially for
+                    you, all my projects and technologies
+                  </Text>
+                </HeaderText>
+                <HeaderImg>
+                  <MouseParallax>
+                    <UserImage
+                      src={`https://github.com/${userData.githubUser}.png`}
+                      alt={userData.nameUser}
+                      title={userData.nameUser}
+                      width={"180px"}
+                      height={"180px"}
+                    />
+                    <Text color="grey4">
+                      {userData.nameUser}
+                    </Text>
+                  </MouseParallax>
+                </HeaderImg>
+              </HeaderTextImg>
             </Flex>
-            <Text as="h1" type="heading1" color="grey5">
-              Sou um desenvolvedor Web que ama{" "}
-              <div>
-                <TextSpan
-                  ref={textAnimated}
-                  as="span"
-                  type="heading2"
-                  color="brand1"
-                />{" "}
-              novos projetos
-              </div>
-            </Text>
-            <Text type="body1" color="grey2">
-              Discover here in this environment, created especially for you, all
-              my projects and technologies
-            </Text>
             <HeaderButtonsArea>
               <Button as="a" type="primary" href="#projects">
                 Ver projetos
@@ -104,11 +118,14 @@ export const Home = (): JSX.Element => {
                 <FaGithub />
               </Button>
             </HeaderButtonsArea>
-            <StackCards>
-              {stackData.map((stack, index) => (
-                <Stack key={index} title={stack.title} icon={stack.img} />
-              ))}
-            </StackCards>
+            <StackMargintop>
+              <Text as="h2" type="heading3" color="grey4">Minhas Stacks:</Text>
+              <StackCards>
+                {stackData.map((stack, index) => (
+                  <Stack key={index} title={stack.title} icon={stack.img} />
+                ))}
+              </StackCards>
+            </StackMargintop>
           </HeaderContent>
         </Container>
       </Header>

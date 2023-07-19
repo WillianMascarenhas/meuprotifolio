@@ -14,6 +14,9 @@ import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { Button, Link } from "@/styles/Buttons";
 import { Container, Flex } from "@/styles/Global";
+import { LogoImage } from "@/pages/home/style";
+
+import ImgSite from "../../public/static/img/favicon/Design_sem_nome__3_-removebg-preview.png"
 
 export interface MenuButtonOpen {
   open: Boolean;
@@ -37,7 +40,14 @@ export const NavBar = (): JSX.Element => {
       <Container>
         <NavbarMobileArea>
           <LogoTipo>
-            <LogoTipoText>{userData.nameUser}</LogoTipoText>
+            {/* <LogoTipoText>{userData.nameUser}</LogoTipoText> */}
+            <LogoImage
+                      src={ImgSite}
+                      alt="Logo do site"
+                      title="Portfólio de Willian Mascarenhas"
+                      width={"80px"}
+                      height={"70px"}
+                    />
           </LogoTipo>
           {isWide && (
             <Button
@@ -64,13 +74,13 @@ export const NavLinks = (): JSX.Element => {
         Home
       </Link>
       <Link type="btLink" as="a" color="grey4" href={`#projects`}>
-        Projects
+        Projetos
       </Link>
       <Link type="btLink" as="a" color="grey4" href={`#contact`}>
-        Contact
+        Contato
       </Link>
       <Link type="btLink" as="a" color="grey4" href={`#social-media`}>
-        Social Media
+        Redes Sociais
       </Link>
     </NavbarLinks>
   );
