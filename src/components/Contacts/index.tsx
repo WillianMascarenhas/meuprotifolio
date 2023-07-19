@@ -31,9 +31,9 @@ export const Contacts = () => {
           <motion.div style={{ scale }}>
             <ContactSectionText>
               <Text type="heading2" color="grey4">
-                  Vamos conversar{" "}
-                <Text as="span" type="heading2" color="brand1">
-                  e desenvolver juntos soluções que você ou sua empresa precisa!{" "}
+                  Vamos conversar e{" "}
+                <Text as="span" type="heading2" color="brand1" css={{ "&:hover": { color: "$brand2", transition: "0.4s", } }}>
+                  desenvolver juntos soluções que você ou sua empresa precisa!{" "}
                 </Text>
                   Aguardo seu contato.
               </Text>

@@ -185,7 +185,11 @@ export const HeaderText = styled("div", {
 
 export const HeaderImg = styled("div", {
   width: "22%",
-  marginTop: "-50px",
+  display: "flex",
+  flexDirection: "column",
+  alignItems:"center",
+  justifyContent:"center",
+  // marginTop: "-50px",
 
   "@mobile": {},
 });

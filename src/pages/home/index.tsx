@@ -42,12 +42,7 @@ export const Home = (): JSX.Element => {
   const textAnimated = useRef(null);
   useEffect(() => {
     const typed = new Typed(textAnimated.current, {
-      strings: [
-        "criar",
-        "desenvolver",
-        "participar de",
-        "ajudar em",
-      ],
+      strings: ["criar", "desenvolver", "participar de", "ajudar em"],
       typeSpeed: 80,
       backSpeed: 75,
       loop: true,
@@ -66,7 +61,9 @@ export const Home = (): JSX.Element => {
             <Flex>
               <HeaderTextImg>
                 <HeaderText>
-                  <Text as="h2" type="heading3" color="grey5">Olá seja bem vindo!</Text>
+                  <Text as="h2" type="heading3" color="grey5">
+                    Olá seja bem vindo!
+                  </Text>
                   <Text as="h1" type="heading2" color="grey5">
                     Sou um desenvolvedor Web Fullstack que ama{" "}
                     <div>
@@ -75,28 +72,34 @@ export const Home = (): JSX.Element => {
                         as="span"
                         type="heading2"
                         color="brand1"
+                        css={{ "&:hover": { color: "$brand2", transition: "0.4s", } }}
                       />{" "}
                       novos projetos
                     </div>
                   </Text>
-                  <Text type="body1" color="grey2">
-                    Discover here in this environment, created especially for
-                    you, all my projects and technologies
+                  <Text css={{ marginTop: "20px" }} type="body1" color="grey2">
+                    Descubra aqui, neste ambiente criado especialmente para
+                    você, alguns dos meus projetos e as stacks com as quais sou
+                    familiarizado.
                   </Text>
                 </HeaderText>
                 <HeaderImg>
-                  <MouseParallax>
+                  <ScrollParallax>
                     <UserImage
                       src={`https://github.com/${userData.githubUser}.png`}
                       alt={userData.nameUser}
                       title={userData.nameUser}
-                      width={"180px"}
-                      height={"180px"}
+                      width={"200px"}
+                      height={"200px"}
                     />
-                    <Text color="grey4">
+                    <Text
+                      as="h2"
+                      css={{ marginLeft: "22px",marginTop: "10px", width: "100%" }}
+                      color="grey4"
+                    >
                       {userData.nameUser}
                     </Text>
-                  </MouseParallax>
+                  </ScrollParallax>
                 </HeaderImg>
               </HeaderTextImg>
             </Flex>
@@ -119,7 +122,9 @@ export const Home = (): JSX.Element => {
               </Button>
             </HeaderButtonsArea>
             <StackMargintop>
-              <Text as="h2" type="heading3" color="grey4">Minhas Stacks:</Text>
+              <Text as="h2" type="heading3" color="grey4">
+                Minhas Stacks:
+              </Text>
               <StackCards>
                 {stackData.map((stack, index) => (
                   <Stack key={index} title={stack.title} icon={stack.img} />

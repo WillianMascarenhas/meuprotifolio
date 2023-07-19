@@ -46,7 +46,7 @@ export const NavBar = (): JSX.Element => {
                       alt="Logo do site"
                       title="Portfólio de Willian Mascarenhas"
                       width={"80px"}
-                      height={"70px"}
+                      height={"60px"}
                     />
           </LogoTipo>
           {isWide && (
