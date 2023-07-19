@@ -74,6 +74,21 @@ export const globalStyles = globalCss({
     // fontFamily: "'Inter', sans-serif",
     fontFamily: "'Poppins', sans-serif",
     boxSizing: "border-box",
+    "&":{
+      scrollbarWidth: "7px",
+      scrollbarColor: "#261d3a #0E0B16"
+    },
+    "&::-webkit-scrollbar" :{
+      width: "7px"
+    },
+    "&::-webkit-scrollbar-track" :{
+      backgroundColor: "#0E0B16"
+    },
+    "&::-webkit-scrollbar-thumb" :{
+      backgroundColor: "#261d3a",
+      borderRadius: "10px",
+    },
+    
   },
   html: {
     scrollBehavior: "smooth",

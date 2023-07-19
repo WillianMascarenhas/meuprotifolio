@@ -185,7 +185,11 @@ export const HeaderText = styled("div", {
 
 export const HeaderImg = styled("div", {
   width: "22%",
-  marginTop: "-50px",
+  display: "flex",
+  flexDirection: "column",
+  alignItems:"center",
+  justifyContent:"center",
+  // marginTop: "-50px",
 
   "@mobile": {},
 });
@@ -198,4 +202,13 @@ export const StackMargintop = styled("div", {
   "@tablet": {
     marginTop: "3rem",gridTemplateColumns: "1fr 1fr 1fr",
   },
+});
+export const Test = styled("div", {
+  "@ForText": {
+    height: "10rem",
+  },
+  "@ForText2": {
+    height: "19rem",
+  },
+
 });

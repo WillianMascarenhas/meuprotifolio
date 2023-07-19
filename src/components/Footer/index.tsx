@@ -1,6 +1,6 @@
-import { Container, Flex, Box } from "@/styles/Global";
+import { Container, Flex } from "@/styles/Global";
 import { Text } from "@/styles/Text";
-import { Footer as FooterWrapper } from "./style";
+import { BoxFooter, Footer as FooterWrapper } from "./style";
 import { UserImage } from "@/pages/home/style";
 import { userData } from "@/utils/userData";
 import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
@@ -19,14 +19,15 @@ export const Footer = (): JSX.Element => {
             width={"70px"}
             height={"70px"}
           />
-          <Box css={{ marginLeft: "$2" }}>
+          <BoxFooter css={{ marginLeft: "$2" }}>
             <Text type="heading4" color="grey5" css={{ marginBottom: "$2" }}>
               Muito obrigado! {/* <HandEffect /> */}
             </Text>
-            <Text type="body1" color="grey2">
-              Entre em contato também através das redes sociais!
+            <Text type="body1" color="grey2" css={{ width: "50%" }}>
+              Para qualquer informação a mais ou algum feedback, você pode
+              entrar em contato também através das redes sociais!
             </Text>
-          </Box>
+          </BoxFooter>
         </Flex>
         <Flex
           css={{

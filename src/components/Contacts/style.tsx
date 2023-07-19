@@ -17,7 +17,7 @@ export const ContactSectionContent = styled("div", {
 });
 
 export const ContactSectionText = styled("aside", {
-  maxWidth: "26.25rem",
+  maxWidth: "40rem",
   display: "grid",
   gridGap: "$2",
   height: "max-content",

@@ -31,3 +31,14 @@ export const Footer = styled("footer", {
     },
   },
 });
+
+export const BoxFooter = styled("div", {
+  maxWidth: "100%",
+  "@mobile": {
+    display: "flex",
+    gap:"20px",
+    flexDirection: "column",
+    justifyContent:"center",
+    alignItems:"center"
+  },
+});
