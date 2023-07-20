@@ -36,6 +36,8 @@ import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import { MouseParallax, ScrollParallax } from "react-just-parallax";
 
+import myPhoto from "../../public/static/img/profile/PortfolioImg-removebg-preview-new.png";
+
 export const Home = (): JSX.Element => {
   const gihubUrl = `https://github.com/${userData.githubUser}`;
   const portfolioUrl = `https://github.com/${userData.githubUser}/meuprotifolio`;
@@ -43,7 +45,8 @@ export const Home = (): JSX.Element => {
   const textAnimated = useRef(null);
   useEffect(() => {
     const typed = new Typed(textAnimated.current, {
-      strings: ["criar", "desenvolver", "participar de", "ajudar em"],
+      // strings: ["criar", "desenvolver", "participar de", "ajudar em"],
+      strings: ["participar de"],
       typeSpeed: 100,
       backSpeed: 75,
       loop: true,
@@ -84,25 +87,29 @@ export const Home = (): JSX.Element => {
                   </Test>
                   <Text css={{ marginTop: "20px" }} type="body1" color="grey2">
                     Descubra aqui, neste ambiente criado especialmente para
-                    você, com alguns dos meus projetos e as stacks com as quais sou
-                    familiarizado.
+                    você, com alguns dos meus projetos e as stacks com as quais
+                    sou familiarizado.
                   </Text>
                 </HeaderText>
                 <HeaderImg>
                   <ScrollParallax>
                     <UserImage
-                      src={`https://github.com/${userData.githubUser}.png`}
+                      src={myPhoto}
                       alt={userData.nameUser}
                       title={userData.nameUser}
-                      width={"200px"}
-                      height={"200px"}
+                      width={"350px"}
+                      height={"350px"}
                     />
                     <Text
                       as="h2"
                       css={{
-                        marginLeft: "22px",
-                        marginTop: "10px",
+                        marginLeft: "120px",
+                        marginTop: "-40px",
                         width: "100%",
+                        "@mobile": {
+                          marginLeft: "28px",
+                          marginTop: "-30px",
+                        },
                       }}
                       color="grey4"
                     >
@@ -113,7 +120,7 @@ export const Home = (): JSX.Element => {
               </HeaderTextImg>
             </Flex>
             <HeaderButtonsArea>
-              <Button as="a" type="primary" href="#projects">
+              <Button as="a" type="primary" href="#projects" css={{ height:"3rem" }}>
                 Ver projetos
               </Button>
               <Button as="a" type="outline" target="_blank" href={portfolioUrl}>
@@ -122,7 +129,7 @@ export const Home = (): JSX.Element => {
               <Button
                 color="grey5"
                 as="a"
-                css={{ "&:hover": { color: "$grey1" } }}
+                css={{ "&:hover": { color: "$grey1" }, width: "3rem", height:"3rem" }}
                 type="circle"
                 target="_blank"
                 href={gihubUrl}

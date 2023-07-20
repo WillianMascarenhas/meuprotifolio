@@ -30,7 +30,6 @@ export const Header = styled("header", {
 });
 
 export const HeaderContent = styled("div", {
-  marginTop: "3rem",
   maxWidth: "100%",
   width: "100%",
   display: "flex",
@@ -47,16 +46,16 @@ export const HeaderContent = styled("div", {
 });
 
 export const HeaderButtonsArea = styled(Flex, {
-  marginTop: "$2",
 
   [`& ${Button}`]: {
     marginRight: "$2",
     overflow: "hidden",
   },
 
-  "@mobile": {
+  "@mobileButton": {
     [`& ${Button}`]: {
       marginRight: "$2",
+      marginTop: "$3",
       overflow: "hidden",
       width: "100%",
     },
@@ -164,7 +163,7 @@ export const ProjectAreaWrapperColumns = styled("div", {
 
 export const HeaderTextImg = styled("div", {
   display: "flex",
-  gap: "12rem",
+  gap: "4rem",
   "@mobile": {
     // display: "flex",
     gap: "0",
@@ -173,7 +172,7 @@ export const HeaderTextImg = styled("div", {
 });
 
 export const HeaderText = styled("div", {
-  width: "75%",
+  width: "60%",
   display: "flex",
   flexDirection: "column",
   gap: "0.7rem",
@@ -190,8 +189,6 @@ export const HeaderImg = styled("div", {
   alignItems:"center",
   justifyContent:"center",
   // marginTop: "-50px",
-
-  "@mobile": {},
 });
 
 export const StackMargintop = styled("div", {
@@ -204,11 +201,19 @@ export const StackMargintop = styled("div", {
   },
 });
 export const Test = styled("div", {
-  "@ForText": {
+  "@mobile": {
+    height: "13rem",
+  },
+  "@ForText1": {
     height: "10rem",
   },
   "@ForText2": {
+    height: "22rem",
+  },
+  "@ForText3": {
     height: "19rem",
   },
-
+  "@ForText4": {
+    height: "21rem",
+  },
 });

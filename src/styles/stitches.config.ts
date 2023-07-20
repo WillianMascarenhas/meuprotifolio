@@ -4,8 +4,12 @@ export const { styled } = createStitches({
   media: {
     mobileLittle: "(max-width: 400px)",
     mobile: "(max-width: 991px)",
-    ForText: "(max-width: 820px)",
-    ForText2: "(max-width: 490px)",
+    mobileButton: "(max-width: 445px)",
+    ForText: "(max-width: 930px)",
+    ForText1: "(max-width: 890px)",
+    ForText2: "(max-width: 610px)",
+    ForText3: "(max-width: 550px)",
+    ForText4: "(max-width: 490px)",
     tablet: "(max-width: 1300px)",
   },
   utils: {
