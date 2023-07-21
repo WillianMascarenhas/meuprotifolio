@@ -83,5 +83,6 @@ export const NavbarLinks = styled(Flex, {
 
 export const NavbarMobileArea = styled("div", {
   display: "flex",
+  alignItems: "center",
   justifyContent: "space-between",
 });

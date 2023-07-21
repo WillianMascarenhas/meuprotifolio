@@ -2,6 +2,7 @@ import { styled } from "@/styles/stitches.config";
 import { Flex } from "@/styles/Global";
 import { Button } from "@/styles/Buttons";
 import { css } from "@stitches/react";
+import {  keyframes } from "@stitches/react";
 
 import meIlustration from "@/public/static/img/background/me-ilustration.svg";
 import backgroundImg from "@/public/static/img/background/header-bg.svg";
@@ -70,10 +71,11 @@ export const HeaderButtonsArea = styled(Flex, {
 
 export const UserImage = styled("img", {
   borderRadius: "50%",
+  
   "@mobile": {
-    width: "12.25rem",
-    height: "12.25rem",
-    marginTop: "55px"
+    width: "19rem",
+    height: "19rem",
+    marginLeft: "-25px"
   },
 });
 
@@ -114,6 +116,20 @@ export const StackCards = styled("div", {
     margin: "0 -1rem",
     paddingInline: "1rem",
   },
+});
+
+export const AboutMeArea = styled("section", {
+  height: "1000px",
+  backgroundColor: "BurlyWood",
+  marginTop: "12rem",
+  marginBottom: "5rem",
+  display: "flex",
+  flexDirection: "column",
+  alignItems:"center",
+
+  "&div": {
+    backgroundColor: "Black"
+  }
 });
 
 export const ProjectsArea = styled("section", {
@@ -165,7 +181,6 @@ export const HeaderTextImg = styled("div", {
   display: "flex",
   gap: "4rem",
   "@mobile": {
-    // display: "flex",
     gap: "0",
     flexDirection: "column-reverse",
   },
@@ -188,7 +203,8 @@ export const HeaderImg = styled("div", {
   flexDirection: "column",
   alignItems:"center",
   justifyContent:"center",
-  // marginTop: "-50px",
+  marginTop: "-50px",
+  marginBottom: "35px",
 });
 
 export const StackMargintop = styled("div", {
@@ -215,5 +231,60 @@ export const Test = styled("div", {
   },
   "@ForText4": {
     height: "21rem",
+  },
+});
+
+
+export const changeColorAnimation = keyframes({
+  "0%": {
+    color: "$brand2",
+  },
+  "25%": {
+    color: "#5c1fec",
+  },
+  "50%": {
+    color: "#7026e2",
+  },
+  "75%": {
+    color: "#882fd6",
+  },
+  "100%": {
+    color: "$brand1",
+  },
+});
+
+export const changeBorderColorAnimation = keyframes({
+  "0%": {
+    borderColor: "$brand2",
+  },
+  "25%": {
+    borderColor: "#5c1fec",
+  },
+  "50%": {
+    borderColor: "#7026e2",
+  },
+  "75%": {
+    borderColor: "#882fd6",
+  },
+  "100%": {
+    borderColor: "$brand1",
+  },
+});
+
+export const changeBackGroundColorAnimation = keyframes({
+  "0%": {
+    backgroundColor: "$brand2",
+  },
+  "25%": {
+    backgroundColor: "#5c1fec",
+  },
+  "50%": {
+    backgroundColor: "#7026e2",
+  },
+  "75%": {
+    backgroundColor: "#882fd6",
+  },
+  "100%": {
+    backgroundColor: "$brand1",
   },
 });

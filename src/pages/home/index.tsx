@@ -30,6 +30,9 @@ import {
   HeaderTextImg,
   HeaderImg,
   Test,
+  AboutMeArea,
+  changeColorAnimation,
+  changeBackGroundColorAnimation,
 } from "./style";
 
 import { useEffect, useRef } from "react";
@@ -45,10 +48,9 @@ export const Home = (): JSX.Element => {
   const textAnimated = useRef(null);
   useEffect(() => {
     const typed = new Typed(textAnimated.current, {
-      // strings: ["criar", "desenvolver", "participar de", "ajudar em"],
-      strings: ["participar de"],
-      typeSpeed: 100,
-      backSpeed: 75,
+      strings: ["criar", "desenvolver", "participar de", "ajudar em"],
+      typeSpeed: 130,
+      backSpeed: 100,
       loop: true,
     });
 
@@ -66,7 +68,7 @@ export const Home = (): JSX.Element => {
               <HeaderTextImg>
                 <HeaderText>
                   <Text as="h2" type="heading3" color="grey5">
-                    Olá seja bem vindo!
+                    Olá, seja bem vindo!
                   </Text>
                   <Test>
                     <Text as="h1" type="heading2" color="grey5">
@@ -78,7 +80,7 @@ export const Home = (): JSX.Element => {
                           type="heading2"
                           color="brand1"
                           css={{
-                            "&:hover": { color: "$brand2", transition: "0.4s" },
+                            animation: `${changeColorAnimation} 2s infinite alternate`,
                           }}
                         />{" "}
                         novos projetos
@@ -92,6 +94,7 @@ export const Home = (): JSX.Element => {
                   </Text>
                 </HeaderText>
                 <HeaderImg>
+                  {/* <MouseParallax> */}
                   <ScrollParallax>
                     <UserImage
                       src={myPhoto}
@@ -107,8 +110,9 @@ export const Home = (): JSX.Element => {
                         marginTop: "-40px",
                         width: "100%",
                         "@mobile": {
-                          marginLeft: "28px",
-                          marginTop: "-30px",
+                          width: "284%",
+                          marginLeft: "55px",
+                          marginTop: "-45px",
                         },
                       }}
                       color="grey4"
@@ -116,11 +120,17 @@ export const Home = (): JSX.Element => {
                       {userData.nameUser}
                     </Text>
                   </ScrollParallax>
+                  {/* </MouseParallax> */}
                 </HeaderImg>
               </HeaderTextImg>
             </Flex>
             <HeaderButtonsArea>
-              <Button as="a" type="primary" href="#projects" css={{ height:"3rem" }}>
+              <Button
+                as="a"
+                type="primary"
+                href="#projects"
+                css={{ height: "3rem" }}
+              >
                 Ver projetos
               </Button>
               <Button as="a" type="outline" target="_blank" href={portfolioUrl}>
@@ -129,7 +139,16 @@ export const Home = (): JSX.Element => {
               <Button
                 color="grey5"
                 as="a"
-                css={{ "&:hover": { color: "$grey1" }, width: "3rem", height:"3rem" }}
+                css={{
+                  "&:hover": {
+                    color: "$grey1",
+                    animation: `${changeBackGroundColorAnimation} 1s infinite alternate`,
+                    border: "none",
+                    transition: "0.4s",
+                  },
+                  width: "3rem",
+                  height: "3rem",
+                }}
                 type="circle"
                 target="_blank"
                 href={gihubUrl}
@@ -137,6 +156,31 @@ export const Home = (): JSX.Element => {
                 <FaGithub />
               </Button>
             </HeaderButtonsArea>
+            <AboutMeArea id="about_me">
+              <Text
+                className="test"
+                as="h2"
+                type="heading3"
+                color="grey5"
+                css={{
+                  marginTop: "125px",
+                }}
+              >
+                Um pouco sobre mim
+              </Text>
+              <div>
+                <div></div>
+                <div>
+                  <Text>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
+                    asperiores explicabo, voluptates aliquid perferendis
+                    voluptatibus magnam esse in corporis, necessitatibus nobis,
+                    earum iure? Esse veritatis voluptates minima soluta at
+                    voluptatum?
+                  </Text>
+                </div>
+              </div>
+            </AboutMeArea>
             <StackMargintop>
               <Text as="h2" type="heading3" color="grey4">
                 Minhas Stacks:
