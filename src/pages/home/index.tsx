@@ -33,6 +33,8 @@ import {
   AboutMeArea,
   changeColorAnimation,
   changeBackGroundColorAnimation,
+  AboutMeConatiner,
+  changeBorderColorAnimation,
 } from "./style";
 
 import { useEffect, useRef } from "react";
@@ -40,6 +42,7 @@ import Typed from "typed.js";
 import { MouseParallax, ScrollParallax } from "react-just-parallax";
 
 import myPhoto from "../../public/static/img/profile/PortfolioImg-removebg-preview-new.png";
+import myPhoto2 from "../../public/static/img/profile/Untitled Project_clipdrop-background-removal_clipdrop-enhance.png";
 
 export const Home = (): JSX.Element => {
   const gihubUrl = `https://github.com/${userData.githubUser}`;
@@ -49,6 +52,7 @@ export const Home = (): JSX.Element => {
   useEffect(() => {
     const typed = new Typed(textAnimated.current, {
       strings: ["criar", "desenvolver", "participar de", "ajudar em"],
+      // strings: ["participar de"],
       typeSpeed: 130,
       backSpeed: 100,
       loop: true,
@@ -158,7 +162,6 @@ export const Home = (): JSX.Element => {
             </HeaderButtonsArea>
             <AboutMeArea id="about_me">
               <Text
-                className="test"
                 as="h2"
                 type="heading3"
                 color="grey5"
@@ -168,10 +171,32 @@ export const Home = (): JSX.Element => {
               >
                 Um pouco sobre mim
               </Text>
-              <div>
-                <div></div>
-                <div>
-                  <Text>
+              <AboutMeConatiner>
+                <div className="image_container">
+                  <MouseParallax strength={0.05}>
+                    <UserImage
+                      src={myPhoto2}
+                      alt={userData.nameUser}
+                      title={userData.nameUser}
+                      width={"450px"}
+                      height={"450px"}
+                      css={{}}
+                    />
+                  </MouseParallax>
+                </div>
+                <div className="text_container">
+                  <Text
+                    as="span"
+                    type="body1"
+                    color="grey5"
+                    css={{
+                      marginTop: "-105px",
+                      border: "solid 3px",
+                      animation: `${changeBorderColorAnimation} 2s infinite alternate`,
+                      borderRadius: "20px",
+                      padding: "2rem 2rem"
+                    }}
+                  >
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
                     asperiores explicabo, voluptates aliquid perferendis
                     voluptatibus magnam esse in corporis, necessitatibus nobis,
@@ -179,7 +204,7 @@ export const Home = (): JSX.Element => {
                     voluptatum?
                   </Text>
                 </div>
-              </div>
+              </AboutMeConatiner>
             </AboutMeArea>
             <StackMargintop>
               <Text as="h2" type="heading3" color="grey4">

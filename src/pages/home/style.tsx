@@ -119,16 +119,42 @@ export const StackCards = styled("div", {
 });
 
 export const AboutMeArea = styled("section", {
-  height: "1000px",
-  backgroundColor: "BurlyWood",
+  // height: "1000px",
+  width: "100%",
   marginTop: "12rem",
   marginBottom: "5rem",
   display: "flex",
   flexDirection: "column",
-  alignItems:"center",
+  // alignItems:"center",
+  "@mobile": {
+    marginTop: "10px",
+  },
+});
 
-  "&div": {
-    backgroundColor: "Black"
+export const AboutMeConatiner = styled("div", {
+  display: "flex",
+  justifyContent: "space-between",
+  gap: "10%",
+  width: "100%",
+  marginTop: "60px",
+  "@mobile": {
+    alignSelf: "flex-start",
+    width: "90%",
+    flexDirection:"column",
+    gap:"5rem",
+  },
+
+  ["& .image_container"]:{
+    width: "30%",
+  },
+
+  ["& .text_container"]:{
+    width: "60%",
+    display: "flex",
+    alignItems:"center",
+    "@mobile": {
+      width: "100%",
+    },
   }
 });
 
@@ -193,6 +219,7 @@ export const HeaderText = styled("div", {
   gap: "0.7rem",
 
   "@mobile": {
+    width: "90%",
     marginTop:"5rem"
   },
 });
@@ -218,19 +245,19 @@ export const StackMargintop = styled("div", {
 });
 export const Test = styled("div", {
   "@mobile": {
-    height: "13rem",
-  },
-  "@ForText1": {
     height: "10rem",
   },
+  "@ForText1": {
+    height: "11rem",
+  },
   "@ForText2": {
-    height: "22rem",
+    height: "12rem",
   },
   "@ForText3": {
-    height: "19rem",
+    height: "12rem",
   },
   "@ForText4": {
-    height: "21rem",
+    height: "15rem",
   },
 });
 

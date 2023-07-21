@@ -15,6 +15,7 @@ import {
 import { FaWhatsapp, FaEnvelopeOpen, FaLinkedin } from "react-icons/fa";
 import { useRef } from "react";
 import { userData } from "@/utils/userData";
+import { changeColorAnimation } from "@/pages/home/style";
 
 export const Contacts = () => {
   const ref = useRef(null);
@@ -32,7 +33,7 @@ export const Contacts = () => {
             <ContactSectionText>
               <Text type="heading2" color="grey4">
                   Vamos conversar e{" "}
-                <Text as="span" type="heading2" color="brand1" css={{ "&:hover": { color: "$brand2", transition: "0.4s", } }}>
+                <Text as="span" type="heading2" color="brand1" css={{ animation: `${changeColorAnimation} 2s infinite alternate` }}>
                   desenvolver juntos soluções que você ou sua empresa precisa!{" "}
                 </Text>
                   Aguardo seu contato.
