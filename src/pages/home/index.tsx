@@ -42,7 +42,7 @@ import Typed from "typed.js";
 import { MouseParallax, ScrollParallax } from "react-just-parallax";
 
 import myPhoto from "../../public/static/img/profile/PortfolioImg-removebg-preview-new.png";
-import myPhoto2 from "../../public/static/img/profile/Untitled Project_clipdrop-background-removal_clipdrop-enhance.png";
+import myPhoto2 from "../../public/static/img/profile/Untitled Project_clipdrop-background-removal-new.png";
 
 export const Home = (): JSX.Element => {
   const gihubUrl = `https://github.com/${userData.githubUser}`;
@@ -106,6 +106,7 @@ export const Home = (): JSX.Element => {
                       title={userData.nameUser}
                       width={"350px"}
                       height={"350px"}
+                      css={{ "@mobile": {width: "350px", height:"350px"} }}
                     />
                     <Text
                       as="h2"
@@ -115,7 +116,7 @@ export const Home = (): JSX.Element => {
                         width: "100%",
                         "@mobile": {
                           width: "284%",
-                          marginLeft: "55px",
+                          marginLeft: "80px",
                           marginTop: "-45px",
                         },
                       }}
@@ -180,7 +181,7 @@ export const Home = (): JSX.Element => {
                       title={userData.nameUser}
                       width={"450px"}
                       height={"450px"}
-                      css={{}}
+                      css={{ "@mobile": {width: "450px", height:"450px"} }}
                     />
                   </MouseParallax>
                 </div>
@@ -191,17 +192,25 @@ export const Home = (): JSX.Element => {
                     color="grey5"
                     css={{
                       marginTop: "-105px",
-                      border: "solid 3px",
+                      border: "solid 2px",
                       animation: `${changeBorderColorAnimation} 2s infinite alternate`,
                       borderRadius: "20px",
-                      padding: "2rem 2rem"
+                      padding: "2rem 2rem",
                     }}
                   >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-                    asperiores explicabo, voluptates aliquid perferendis
-                    voluptatibus magnam esse in corporis, necessitatibus nobis,
-                    earum iure? Esse veritatis voluptates minima soluta at
-                    voluptatum?
+                    Prazer, me chamo Willian! Sou baiano, tenho 22 anos e acabei
+                    de me formar como Desenvolvedor Full Stack pela Kenzie
+                    Academy. Iniciei o meu caminho com a formação em engenharia
+                    civil na Universidade Federal da Bahia, mas o que busco é
+                    seguir uma jornada profissional na área de tecnologia.
+                    Assim, mesmo já tendo adquirido uma base sólida de HTML,
+                    CSS, JavaScript, Typescript e frameworks como React e
+                    bibliotecas, busco seguir a minha jornada de aprendizado em
+                    ciência da computação e sempre me atualizando através de
+                    cursos licenciados. Me considero uma pessoa flexível,
+                    disposta e determinada, e estou ansioso para encontrar uma
+                    oportunidade para expandir e iniciar a minha jornada
+                    profissional.
                   </Text>
                 </div>
               </AboutMeConatiner>

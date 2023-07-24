@@ -122,7 +122,7 @@ export const AboutMeArea = styled("section", {
   // height: "1000px",
   width: "100%",
   marginTop: "12rem",
-  marginBottom: "5rem",
+  marginBottom: "-3rem",
   display: "flex",
   flexDirection: "column",
   // alignItems:"center",

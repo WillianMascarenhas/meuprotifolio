@@ -1,10 +1,12 @@
 import { styled } from "@/styles/stitches.config";
 import { Flex, Container } from "@/styles/Global";
 import { Button } from "@/styles/Buttons";
+import { changeBorderColorAnimation } from "@/pages/home/style";
 
 export const Navbar = styled("nav", {
   background: "$greyRGB",
-  borderBottom: "2px solid $brand1",
+  borderBottom: "2px solid",
+  animation: `${changeBorderColorAnimation} 2s infinite alternate`,
   position: "fixed",
   inset: 0,
   bottom: "auto",
