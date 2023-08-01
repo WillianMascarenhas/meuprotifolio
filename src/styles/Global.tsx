@@ -68,12 +68,17 @@ export const colors = {
 };
 
 export const globalStyles = globalCss({
+  "body":{
+    background:
+    "rgb(32,10,41) radial-gradient(circle, rgba(32,10,41,1) 0%, rgba(18,8,57,1) 100%)",
+  },
   "*": {
     margin: 0,
     padding: 0,
     // fontFamily: "'Inter', sans-serif",
     fontFamily: "'Poppins', sans-serif",
     boxSizing: "border-box",
+    
     "&":{
       scrollbarWidth: "7px",
       scrollbarColor: "#261d3a #0E0B16"

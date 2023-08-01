@@ -16,7 +16,10 @@ import { Button, Link } from "@/styles/Buttons";
 import { Container, Flex } from "@/styles/Global";
 import { LogoImage } from "@/pages/home/style";
 
-import ImgSite from "../../public/static/img/favicon/Design_sem_nome__3_-removebg-preview.png"
+import ImgSite from "../../public/static/img/favicon/Design_sem_nome__3_-removebg-preview.png";
+
+import { HomeContext } from "../../providers/homeProvider";
+import { useContext } from "react";
 
 export interface MenuButtonOpen {
   open: Boolean;
@@ -24,7 +27,6 @@ export interface MenuButtonOpen {
 }
 
 export const NavBar = (): JSX.Element => {
-
   const isWide = useMedia({ maxWidth: "991px" });
 
   document.title = userData.nameUser;
@@ -35,35 +37,39 @@ export const NavBar = (): JSX.Element => {
     setOpen(!open);
   };
 
+  const { loading, setLoading } = useContext(HomeContext);
+
   return (
-    <NavbarWrapper>
-      <Container>
-        <NavbarMobileArea>
-          <LogoTipo>
-            {/* <LogoTipoText>{userData.nameUser}</LogoTipoText> */}
-            <LogoImage
-                      src={ImgSite}
-                      alt="Logo do site"
-                      title="Portfólio de Willian Mascarenhas"
-                      width={"80px"}
-                      height={"60px"}
-                    />
-          </LogoTipo>
-          {isWide && (
-            <Button
-              type="icon"
-              onClick={OpenMenu}
-              aria-label={!open ? "Abrir Menu" : "Fechar Menu"}
-            >
-              {!open ? <FaBars /> : <IoClose />}
-            </Button>
-          )}
-        </NavbarMobileArea>
-        <Flex>
-          {isWide ? open && <NavLinks /> : <NavLinks />}
-        </Flex>
-      </Container>
-    </NavbarWrapper>
+    <>
+      {loading ? null : (
+        <NavbarWrapper>
+          <Container>
+            <NavbarMobileArea>
+              <LogoTipo>
+                {/* <LogoTipoText>{userData.nameUser}</LogoTipoText> */}
+                <LogoImage
+                  src={ImgSite}
+                  alt="Logo do site"
+                  title="Portfólio de Willian Mascarenhas"
+                  width={"80px"}
+                  height={"60px"}
+                />
+              </LogoTipo>
+              {isWide && (
+                <Button
+                  type="icon"
+                  onClick={OpenMenu}
+                  aria-label={!open ? "Abrir Menu" : "Fechar Menu"}
+                >
+                  {!open ? <FaBars /> : <IoClose />}
+                </Button>
+              )}
+            </NavbarMobileArea>
+            <Flex>{isWide ? open && <NavLinks /> : <NavLinks />}</Flex>
+          </Container>
+        </NavbarWrapper>
+      )}
+    </>
   );
 };
 

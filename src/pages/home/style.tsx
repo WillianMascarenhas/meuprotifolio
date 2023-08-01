@@ -4,16 +4,11 @@ import { Button } from "@/styles/Buttons";
 import { css } from "@stitches/react";
 import {  keyframes } from "@stitches/react";
 
-import meIlustration from "@/public/static/img/background/me-ilustration.svg";
-import backgroundImg from "@/public/static/img/background/header-bg.svg";
-
 import dots from "@/public/static/img/background/dots.svg";
 
 export const Header = styled("header", {
   backgroundColor: "$grey1",
-  // backgroundColor: "aqua",
-  padding: "12rem 0 8rem 0",
-  // backgroundImage: `url(${backgroundImg})`,
+  padding: "14rem 0 8rem 0",
   backgroundRepeat: "no-repeat",
   backgroundPosition: "right",
   backgroundAttachment: "fixed",
@@ -87,6 +82,114 @@ export const LogoImage = styled("img", {
   },
 });
 
+export const HeaderTextImg = styled("div", {
+  display: "flex",
+  gap: "4rem",
+  "@mobile": {
+    gap: "0",
+    flexDirection: "column-reverse",
+  },
+});
+
+export const HeaderText = styled("div", {
+  width: "60%",
+  display: "flex",
+  flexDirection: "column",
+  gap: "0.7rem",
+
+  "@mobile": {
+    width: "90%",
+    marginTop:"5rem"
+  },
+});
+
+export const HeaderImg = styled("div", {
+  width: "22%",
+  display: "flex",
+  flexDirection: "column",
+  alignItems:"center",
+  justifyContent:"center",
+  marginTop: "-50px",
+  marginBottom: "35px",
+});
+
+
+import BackGroundImg from "../../public/static/img/background/low-poly-grid-haikei1.png";
+
+// const animatedBackground = keyframes({
+//   from: {
+//     backgroundPosition: "0 0%",
+//   },
+//   to: {
+//     backgroundPosition: "100% 0",
+//   },
+// });
+
+
+function getRandomValue(min:number, max:number) {
+  return Math.random() * (max - min) + min;
+}
+
+const animatedBackground = keyframes({
+  "0%": {
+    backgroundPosition: `${getRandomValue(0, 20)}% ${getRandomValue(0, 20)}%`,
+  },
+  "100%": {
+    backgroundPosition: `${getRandomValue(80, 100)}% ${getRandomValue(80, 100)}%`,
+  },
+});
+
+export const BackGroundImgDiv = styled("div", {
+  backgroundImage: `url(${BackGroundImg})`,
+  backgroundPosition: "0px 0px",
+  animation: `${animatedBackground} 20s linear infinite alternate`,
+  animationFillMode: "forwards",
+});
+
+export const AboutMeArea = styled('section', {
+  position:"relative",
+  marginBottom: '-3.55rem',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent:"center",
+  alignItems: "center",
+
+  ["& .container"]:{
+    display: "flex",
+    flexDirection: "column",
+    width: "95%",
+    color:"Aqua"
+  }
+});
+
+
+export const AboutMeConatiner = styled("div", {
+  display: "flex",
+  justifyContent: "space-between",
+  gap: "10%",
+  width: "90%",
+  marginTop: "60px",
+  "@mobile": {
+    alignSelf: "flex-start",
+    width: "90%",
+    flexDirection:"column",
+    gap:"5rem",
+  },
+
+  ["& .image_container"]:{
+    width: "30%",
+  },
+
+  ["& .text_container"]:{
+    width: "60%",
+    display: "flex",
+    alignItems:"center",
+    "@mobile": {
+      width: "100%",
+    },
+  }
+});
+
 export const StackSection = styled("div", {
   backgroundColor: "$grey4",
   padding: "4rem 0 2rem 0",
@@ -118,51 +221,32 @@ export const StackCards = styled("div", {
   },
 });
 
-export const AboutMeArea = styled("section", {
-  // height: "1000px",
-  width: "100%",
-  marginTop: "12rem",
-  marginBottom: "-3rem",
+export const StackMargintop = styled("div", {
+  marginBottom: "-18rem",
+  paddingTop: "110px",
+  position:"relative",
   display: "flex",
-  flexDirection: "column",
-  // alignItems:"center",
+  justifyContent:"center",
+
   "@mobile": {
-    marginTop: "10px",
+    marginTop: "3rem",
   },
-});
-
-export const AboutMeConatiner = styled("div", {
-  display: "flex",
-  justifyContent: "space-between",
-  gap: "10%",
-  width: "100%",
-  marginTop: "60px",
-  "@mobile": {
-    alignSelf: "flex-start",
-    width: "90%",
-    flexDirection:"column",
-    gap:"5rem",
+  "@tablet": {
+    marginTop: "3rem",gridTemplateColumns: "1fr 1fr 1fr",
   },
 
-  ["& .image_container"]:{
-    width: "30%",
-  },
-
-  ["& .text_container"]:{
-    width: "60%",
-    display: "flex",
-    alignItems:"center",
-    "@mobile": {
-      width: "100%",
-    },
+  ["& .container"]:{
+    display:"flex",
+    flexDirection: "column",
+    width: "95%"
   }
 });
 
 export const ProjectsArea = styled("section", {
+  marginTop: "20rem",
   padding: "$section 0",
-  backgroundColor: "$grey0",
   backgroundImage: `url(${dots})`,
-  backgroundRepeat: "no-repeat",
+  backgroundRepeat: "repeat-x",
   backgroundPosition: "left top 11rem",
   "@tablet": {
     backgroundPosition: "right top 8rem",
@@ -202,47 +286,6 @@ export const ProjectAreaWrapperColumns = styled("div", {
   },
 });
 
-
-export const HeaderTextImg = styled("div", {
-  display: "flex",
-  gap: "4rem",
-  "@mobile": {
-    gap: "0",
-    flexDirection: "column-reverse",
-  },
-});
-
-export const HeaderText = styled("div", {
-  width: "60%",
-  display: "flex",
-  flexDirection: "column",
-  gap: "0.7rem",
-
-  "@mobile": {
-    width: "90%",
-    marginTop:"5rem"
-  },
-});
-
-export const HeaderImg = styled("div", {
-  width: "22%",
-  display: "flex",
-  flexDirection: "column",
-  alignItems:"center",
-  justifyContent:"center",
-  marginTop: "-50px",
-  marginBottom: "35px",
-});
-
-export const StackMargintop = styled("div", {
-  marginTop: "17rem",
-  "@mobile": {
-    marginTop: "3rem",
-  },
-  "@tablet": {
-    marginTop: "3rem",gridTemplateColumns: "1fr 1fr 1fr",
-  },
-});
 export const Test = styled("div", {
   "@mobile": {
     height: "10rem",

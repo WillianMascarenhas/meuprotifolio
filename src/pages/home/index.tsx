@@ -35,133 +35,175 @@ import {
   changeBackGroundColorAnimation,
   AboutMeConatiner,
   changeBorderColorAnimation,
+  BackGroundImgDiv,
 } from "./style";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext, MouseEvent } from "react";
 import Typed from "typed.js";
 import { MouseParallax, ScrollParallax } from "react-just-parallax";
 
 import myPhoto from "../../public/static/img/profile/PortfolioImg-removebg-preview-new.png";
 import myPhoto2 from "../../public/static/img/profile/Untitled Project_clipdrop-background-removal-new.png";
+import { Loading } from "@/components/Loading";
+import { HomeContext } from "../../providers/homeProvider";
+
+import BackGroundtop from "../../public/static/img/background/wave.png";
+import BackGroundBottom from "../../public/static/img/background/wave (1).png";
 
 export const Home = (): JSX.Element => {
   const gihubUrl = `https://github.com/${userData.githubUser}`;
   const portfolioUrl = `https://github.com/${userData.githubUser}/meuprotifolio`;
 
-  const textAnimated = useRef(null);
-  useEffect(() => {
-    const typed = new Typed(textAnimated.current, {
-      strings: ["criar", "desenvolver", "participar de", "ajudar em"],
-      // strings: ["participar de"],
-      typeSpeed: 130,
-      backSpeed: 100,
-      loop: true,
-    });
+  const { loading, setLoading } = useContext(HomeContext);
 
-    return () => {
-      typed.destroy();
-    };
+  const textAnimated = useRef(null);
+
+
+  useEffect(() => {
+    if (loading) {
+      null;
+    } else {
+      const typedOptions = {
+        strings: ["criar", "desenvolver", "participar de", "ajudar em"],
+        typeSpeed: 130,
+        backSpeed: 100,
+        loop: true,
+      };
+
+      const typed = new Typed(textAnimated.current, typedOptions);
+      return () => {
+        typed.destroy();
+      };
+    }
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   }, []);
 
   return (
-    <main id="home">
-      <Header>
-        <Container>
-          <HeaderContent>
-            <Flex>
-              <HeaderTextImg>
-                <HeaderText>
-                  <Text as="h2" type="heading3" color="grey5">
-                    Olá, seja bem vindo!
-                  </Text>
-                  <Test>
-                    <Text as="h1" type="heading2" color="grey5">
-                      Sou um desenvolvedor Web Fullstack que ama{" "}
-                      <div>
-                        <TextSpan
-                          ref={textAnimated}
-                          as="span"
-                          type="heading2"
-                          color="brand1"
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <main id="home">
+          <Header
+            css={{
+              background:
+                "rgb(32,10,41) radial-gradient(circle, rgba(32,10,41,1) 0%, rgba(18,8,57,1) 100%)",
+            }}
+          >
+            <Container>
+              <HeaderContent>
+                <Flex>
+                  <HeaderTextImg>
+                    <HeaderText>
+                      <Text as="h2" type="heading3" color="grey5">
+                        Olá, seja bem vindo!
+                      </Text>
+                      <Test>
+                        <Text as="h1" type="heading2" color="grey5">
+                          Sou um desenvolvedor Web Fullstack que ama{" "}
+                          <div>
+                            <TextSpan
+                              ref={textAnimated}
+                              as="span"
+                              type="heading2"
+                              color="brand1"
+                              css={{
+                                animation: `${changeColorAnimation} 2s infinite alternate`,
+                              }}
+                            />{" "}
+                            novos projetos
+                          </div>
+                        </Text>
+                      </Test>
+                      <Text
+                        css={{ marginTop: "20px" }}
+                        type="body1"
+                        color="grey2"
+                      >
+                        Descubra aqui, neste ambiente criado especialmente para
+                        você, com alguns dos meus projetos e as stacks com as
+                        quais sou familiarizado.
+                      </Text>
+                    </HeaderText>
+                    <HeaderImg>
+                      {/* <MouseParallax> */}
+                      <ScrollParallax>
+                        <UserImage
+                          src={myPhoto}
+                          alt={userData.nameUser}
+                          title={userData.nameUser}
+                          width={"350px"}
+                          height={"350px"}
                           css={{
-                            animation: `${changeColorAnimation} 2s infinite alternate`,
+                            "@mobile": { width: "350px", height: "350px" },
                           }}
-                        />{" "}
-                        novos projetos
-                      </div>
-                    </Text>
-                  </Test>
-                  <Text css={{ marginTop: "20px" }} type="body1" color="grey2">
-                    Descubra aqui, neste ambiente criado especialmente para
-                    você, com alguns dos meus projetos e as stacks com as quais
-                    sou familiarizado.
-                  </Text>
-                </HeaderText>
-                <HeaderImg>
-                  {/* <MouseParallax> */}
-                  <ScrollParallax>
-                    <UserImage
-                      src={myPhoto}
-                      alt={userData.nameUser}
-                      title={userData.nameUser}
-                      width={"350px"}
-                      height={"350px"}
-                      css={{ "@mobile": {width: "350px", height:"350px"} }}
-                    />
-                    <Text
-                      as="h2"
-                      css={{
-                        marginLeft: "120px",
-                        marginTop: "-40px",
-                        width: "100%",
-                        "@mobile": {
-                          width: "284%",
-                          marginLeft: "80px",
-                          marginTop: "-45px",
-                        },
-                      }}
-                      color="grey4"
-                    >
-                      {userData.nameUser}
-                    </Text>
-                  </ScrollParallax>
-                  {/* </MouseParallax> */}
-                </HeaderImg>
-              </HeaderTextImg>
-            </Flex>
-            <HeaderButtonsArea>
-              <Button
-                as="a"
-                type="primary"
-                href="#projects"
-                css={{ height: "3rem" }}
-              >
-                Ver projetos
-              </Button>
-              <Button as="a" type="outline" target="_blank" href={portfolioUrl}>
-                Ver portifólio
-              </Button>
-              <Button
-                color="grey5"
-                as="a"
-                css={{
-                  "&:hover": {
-                    color: "$grey1",
-                    animation: `${changeBackGroundColorAnimation} 1s infinite alternate`,
-                    border: "none",
-                    transition: "0.4s",
-                  },
-                  width: "3rem",
-                  height: "3rem",
-                }}
-                type="circle"
-                target="_blank"
-                href={gihubUrl}
-              >
-                <FaGithub />
-              </Button>
-            </HeaderButtonsArea>
+                        />
+                        <Text
+                          as="h2"
+                          css={{
+                            marginLeft: "120px",
+                            marginTop: "-40px",
+                            width: "100%",
+                            "@mobile": {
+                              width: "284%",
+                              marginLeft: "80px",
+                              marginTop: "-45px",
+                            },
+                          }}
+                          color="grey4"
+                        >
+                          {userData.nameUser}
+                        </Text>
+                      </ScrollParallax>
+                      {/* </MouseParallax> */}
+                    </HeaderImg>
+                  </HeaderTextImg>
+                </Flex>
+                <HeaderButtonsArea>
+                  <Button
+                    as="a"
+                    type="primary"
+                    href="#projects"
+                    css={{ height: "3rem" }}
+                  >
+                    Ver projetos
+                  </Button>
+                  <Button
+                    as="a"
+                    type="outline"
+                    target="_blank"
+                    href={portfolioUrl}
+                  >
+                    Ver portifólio
+                  </Button>
+                  <Button
+                    color="grey5"
+                    as="a"
+                    css={{
+                      "&:hover": {
+                        color: "$grey1",
+                        animation: `${changeBackGroundColorAnimation} 1s infinite alternate`,
+                        border: "none",
+                        transition: "0.4s",
+                      },
+                      width: "3rem",
+                      height: "3rem",
+                    }}
+                    type="circle"
+                    target="_blank"
+                    href={gihubUrl}
+                  >
+                    <FaGithub />
+                  </Button>
+                </HeaderButtonsArea>
+              </HeaderContent>
+            </Container>
+          </Header>
+          <BackGroundImgDiv>
             <AboutMeArea id="about_me">
+              <div className="container">
               <Text
                 as="h2"
                 type="heading3"
@@ -172,6 +214,7 @@ export const Home = (): JSX.Element => {
               >
                 Um pouco sobre mim
               </Text>
+
               <AboutMeConatiner>
                 <div className="image_container">
                   <MouseParallax strength={0.05}>
@@ -181,7 +224,9 @@ export const Home = (): JSX.Element => {
                       title={userData.nameUser}
                       width={"450px"}
                       height={"450px"}
-                      css={{ "@mobile": {width: "450px", height:"450px"} }}
+                      css={{
+                        "@mobile": { width: "450px", height: "450px" },
+                      }}
                     />
                   </MouseParallax>
                 </div>
@@ -214,41 +259,46 @@ export const Home = (): JSX.Element => {
                   </Text>
                 </div>
               </AboutMeConatiner>
+              </div>
             </AboutMeArea>
+
             <StackMargintop>
-              <Text as="h2" type="heading3" color="grey4">
-                Minhas Stacks:
-              </Text>
-              <StackCards>
-                {stackData.map((stack, index) => (
-                  <Stack key={index} title={stack.title} icon={stack.img} />
-                ))}
-              </StackCards>
+              <div className="container">
+                <Text as="h2" type="heading3" color="grey4">
+                  Minhas Stacks:
+                </Text>
+                <StackCards>
+                  {stackData.map((stack, index) => (
+                    <Stack key={index} title={stack.title} icon={stack.img} />
+                  ))}
+                </StackCards>
+              </div>
             </StackMargintop>
-          </HeaderContent>
-        </Container>
-      </Header>
-      <ProjectsArea id="projects">
-        <Container>
-          <ProjectAreaWrapperColumns>
-            <ProjectsAreaSocialMediaMessage>
-              <Text as="h2" type="heading4" color="grey4">
-                Meu projetos:
-              </Text>
-              <Text as="p" type="body1" color="grey2">
-                Alguns dos meus projetos{" "}
-                {/* <Text as="span" color="brand1">
+          </BackGroundImgDiv>
+
+          <ProjectsArea id="projects">
+            <Container>
+              <ProjectAreaWrapperColumns>
+                <ProjectsAreaSocialMediaMessage>
+                  <Text as="h2" type="heading4" color="grey4">
+                    Meu projetos:
+                  </Text>
+                  <Text as="p" type="body1" color="grey2">
+                    Alguns dos meus projetos{" "}
+                    {/* <Text as="span" color="brand1">
                   side projects
                 </Text> */}
-              </Text>
-            </ProjectsAreaSocialMediaMessage>
-            <ProjectsAreaContent>
-              <Project />
-            </ProjectsAreaContent>
-          </ProjectAreaWrapperColumns>
-        </Container>
-      </ProjectsArea>
-      <Contacts />
-    </main>
+                  </Text>
+                </ProjectsAreaSocialMediaMessage>
+                <ProjectsAreaContent>
+                  <Project />
+                </ProjectsAreaContent>
+              </ProjectAreaWrapperColumns>
+            </Container>
+          </ProjectsArea>
+          <Contacts />
+        </main>
+      )}
+    </>
   );
 };
