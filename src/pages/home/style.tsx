@@ -114,15 +114,33 @@ export const HeaderImg = styled("div", {
 });
 
 
-import BackGroundImg from "../../public/static/img/background/low-poly-grid-haikei1.png";
+
+import BackGroundImg1 from "../../public/static/img/background/low-poly-grid-haikei1.png";
+import BackGroundImg2 from "../../public/static/img/background/low-poly-grid-haikei2.png";
+import BackGroundImg3 from "../../public/static/img/background/low-poly-grid-haikei3.png";
 
 // const animatedBackground = keyframes({
-//   from: {
-//     backgroundPosition: "0 0%",
+//   "0%": {
+//     backgroundImage: `url(${BackGroundImg})`,
+//     backgroundPosition: "0 0",
 //   },
-//   to: {
+//   "25%": {
+//     backgroundImage: `url(${BackGroundImg1})`,
+//     backgroundPosition: "25% 0",
+//   },
+//   "50%": {
+//     backgroundImage: `url(${BackGroundImg2})`,
+//     backgroundPosition: "50% 0",
+//   },
+//   "75%": {
+//     backgroundImage: `url(${BackGroundImg3})`,
+//     backgroundPosition: "75% 0",
+//   },
+//   "100%": {
+//     backgroundImage: `url(${BackGroundImg})`,
 //     backgroundPosition: "100% 0",
 //   },
+
 // });
 
 
@@ -131,18 +149,28 @@ function getRandomValue(min:number, max:number) {
 }
 
 const animatedBackground = keyframes({
+  // "0%": {
+  //   backgroundImage: `url(${BackGroundImg1})`,
+  //   backgroundPosition: `${getRandomValue(0, 20)}% ${getRandomValue(0, 20)}%`,
+  // },
   "0%": {
+    backgroundImage: `url(${BackGroundImg3})`,
+    backgroundPosition: `${getRandomValue(0, 20)}% ${getRandomValue(0, 20)}%`,
+  },
+  "50%": {
+    backgroundImage: `url(${BackGroundImg2})`,
     backgroundPosition: `${getRandomValue(0, 20)}% ${getRandomValue(0, 20)}%`,
   },
   "100%": {
-    backgroundPosition: `${getRandomValue(80, 100)}% ${getRandomValue(80, 100)}%`,
+    backgroundImage: `url(${BackGroundImg3})`,
+    backgroundPosition: `${getRandomValue(0, 20)}% ${getRandomValue(0, 20)}%`,
   },
 });
 
 export const BackGroundImgDiv = styled("div", {
-  backgroundImage: `url(${BackGroundImg})`,
   backgroundPosition: "0px 0px",
-  animation: `${animatedBackground} 20s linear infinite alternate`,
+  backgroundSize: "300px",
+  animation: `${animatedBackground} 80s linear infinite alternate`,
   animationFillMode: "forwards",
 });
 
@@ -195,63 +223,93 @@ export const StackSection = styled("div", {
   padding: "4rem 0 2rem 0",
 });
 
-export const StackCards = styled("div", {
-  // display: "grid",
-  // gridTemplateColumns: "1fr 1fr 1fr 1fr",
-  display: "flex",
-  flexWrap: "wrap",
-  justifyContent: "center",
-  padding: "3.8rem 0",
-  gap: "6rem",
-  // marginTop: "10rem",
+// export const StackCards = styled("div", {
+//   display: "flex",
+//   flexWrap: "wrap",
+//   justifyContent: "center",
+//   padding: "3.8rem 0",
+//   gap: "6rem",
 
-  "@tablet": {
-    gridTemplateColumns: "1fr 1fr 1fr",
-  },
+//   "@tablet": {
+//     gridTemplateColumns: "1fr 1fr 1fr",
+//   },
 
-  "@mobile": {
-    gridTemplateColumns: "1fr 1fr",
-  },
+//   "@mobile": {
+//     gridTemplateColumns: "1fr 1fr",
+//   },
 
-  "@mobileLittle": {
-    display: "flex",
-    overflow: "auto",
-    margin: "0 -1rem",
-    paddingInline: "1rem",
-  },
-});
+//   "@mobileLittle": {
+//     display: "flex",
+//     overflow: "auto",
+//     margin: "0 -1rem",
+//     paddingInline: "1rem",
+//   },
+// });
 
 export const StackMargintop = styled("div", {
   marginBottom: "-18rem",
-  paddingTop: "110px",
+  padding: "50px 0px",
   position:"relative",
   display: "flex",
   justifyContent:"center",
 
-  "@mobile": {
-    marginTop: "3rem",
-  },
-  "@tablet": {
-    marginTop: "3rem",gridTemplateColumns: "1fr 1fr 1fr",
-  },
 
   ["& .container"]:{
     display:"flex",
+    flexDirection: "row",
+    gap:"1rem",
+    width: "80%",
+
+    ["& div"]:{
+      width:"60%"
+    },
+
+    ["& img"]:{
+      width:"45%",
+      transform: "scaleX(-1)"
+    }
+  }
+});
+export const StackList = styled("ul", {
+  display:"flex",
+  flexDirection: "column",
+  gap:"3rem",
+
+  ["& div"]:{
+    display:"flex",
     flexDirection: "column",
-    width: "95%"
+    gap: "1.5rem",
+
+    ["& ul"]:{
+      display:"flex",
+      flexDirection: "row",
+      gap:"1.5rem"
+    }
   }
 });
 
 export const ProjectsArea = styled("section", {
-  marginTop: "20rem",
+  display: "flex",
+  flexDirection: "column",
+  alignItems:"center",
+  marginTop: "8rem",
   padding: "$section 0",
   backgroundImage: `url(${dots})`,
   backgroundRepeat: "repeat-x",
   backgroundPosition: "left top 11rem",
+  ["& hr"]:{  
+    width:"100%",
+},
+  ["& div"]:{  
+    width:"80%",
+},
+
   "@tablet": {
     backgroundPosition: "right top 8rem",
     padding: "$sectionMobile 0",
+    marginTop: "14rem",
   },
+
 });
 
 export const ProjectsAreaSocialMediaMessage = styled("div", {

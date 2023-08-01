@@ -1,40 +1,43 @@
 import { TbBrandNextjs } from "react-icons/tb";
-import { SiPostgresql, SiTypescript } from "react-icons/si";
-import { FaGit, FaPython } from "react-icons/fa";
 import {
-  FaDocker,
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaNode,
-  FaReact,
-} from "react-icons/fa";
+  SiPostgresql,
+  SiTypescript,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPython,
+  SiGithub
+} from "react-icons/si";
 
-export const stackData = [
+export const FrontData = [
   {
     title: "HTML",
-    img: FaHtml5,
+    img: SiHtml5,
   },
   {
     title: "CSS",
-    img: FaCss3Alt,
+    img: SiCss3,
   },
   {
     title: "JS",
-    img: FaJs,
+    img: SiJavascript,
   },
   { title: "TypeScript", img: SiTypescript },
   {
-    title: "Node JS",
-    img: FaNode,
-  },
-  {
     title: "React",
-    img: FaReact,
+    img: SiReact,
   },
-  // { title: "Next.js", img: TbBrandNextjs },
-  // { title: "Docker", img: FaDocker },
-  { title: "PostgreSQL", img: SiPostgresql },
-  { title: "Git", img: FaGit },
-  { title: "Python", img: FaPython },
+  { title: "Next.js", img: SiNextdotjs },
 ];
+export const BackData = [
+  {
+    title: "Node JS",
+    img: SiNodedotjs,
+  },
+  { title: "Python", img: SiPython },
+];
+export const DBData = [{ title: "PostgreSQL", img: SiPostgresql }];
+export const PlusData = [{ title: "Git", img: SiGithub }];

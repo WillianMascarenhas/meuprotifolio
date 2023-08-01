@@ -9,7 +9,7 @@ import { Project } from "@/components/Project";
 import { Contacts } from "@/components/Contacts";
 
 // Data
-import { stackData } from "@/utils/stackData";
+import { BackData, DBData, FrontData, PlusData } from "@/utils/stackData";
 import { userData } from "@/utils/userData";
 
 import { FaGithub } from "react-icons/fa";
@@ -20,7 +20,7 @@ import {
   HeaderContent,
   HeaderButtonsArea,
   UserImage,
-  StackCards,
+  // StackCards,
   ProjectsArea,
   ProjectsAreaSocialMediaMessage,
   ProjectAreaWrapperColumns,
@@ -36,11 +36,14 @@ import {
   AboutMeConatiner,
   changeBorderColorAnimation,
   BackGroundImgDiv,
+  StackList,
 } from "./style";
 
 import { useEffect, useRef, useContext, MouseEvent } from "react";
 import Typed from "typed.js";
 import { MouseParallax, ScrollParallax } from "react-just-parallax";
+
+import gifTest from "../../public/static/img/background/developer-activity-animate.svg"
 
 import myPhoto from "../../public/static/img/profile/PortfolioImg-removebg-preview-new.png";
 import myPhoto2 from "../../public/static/img/profile/Untitled Project_clipdrop-background-removal-new.png";
@@ -79,7 +82,7 @@ export const Home = (): JSX.Element => {
       setLoading(false);
     }, 1000);
   }, []);
-
+  
   return (
     <>
       {loading ? (
@@ -202,7 +205,7 @@ export const Home = (): JSX.Element => {
             </Container>
           </Header>
           <BackGroundImgDiv>
-            <AboutMeArea id="about_me">
+            {/* <AboutMeArea id="about_me">
               <div className="container">
               <Text
                 as="h2"
@@ -210,6 +213,14 @@ export const Home = (): JSX.Element => {
                 color="grey5"
                 css={{
                   marginTop: "125px",
+                  backgroundColor: "rgba(134, 142, 150, 1)",
+                  maxWidth: "20rem",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent:"center",
+                  padding: "7px",
+                  border: "solid 1px tranparent",
+                  borderRadius:"20px"
                 }}
               >
                 Um pouco sobre mim
@@ -260,27 +271,48 @@ export const Home = (): JSX.Element => {
                 </div>
               </AboutMeConatiner>
               </div>
-            </AboutMeArea>
+            </AboutMeArea> */}
 
             <StackMargintop>
+            {/* <Container></Container> */}
               <div className="container">
-                <Text as="h2" type="heading3" color="grey4">
+                <div>
+                <Text as="h2" type="heading3" color="grey4" css={{marginBottom: "3rem"}}>
                   Minhas Stacks:
                 </Text>
-                <StackCards>
-                  {stackData.map((stack, index) => (
-                    <Stack key={index} title={stack.title} icon={stack.img} />
-                  ))}
-                </StackCards>
+                <StackList>
+                  <div>
+                    <Text as="h3" type="heading4" color="grey4">Front</Text>
+                    <ul>{FrontData.map((stack, index) =>(<Stack key={index} title={stack.title} icon={stack.img} />))}</ul>
+                  </div>
+                  <div>
+                    <Text as="h3" type="heading4" color="grey4">Back</Text>
+                    <ul>{BackData.map((stack, index) =>(<Stack key={index} title={stack.title} icon={stack.img} />))}</ul>
+                  </div>
+                  <div>
+                    <Text as="h3" type="heading4" color="grey4">Banco de Dados</Text>
+                    <ul>{DBData.map((stack, index) =>(<Stack key={index} title={stack.title} icon={stack.img} />))}</ul>
+                  </div>
+                  <div>
+                    <Text as="h3" type="heading4" color="grey4">Ferramentas</Text>
+                    <ul>{PlusData.map((stack, index) =>(<Stack key={index} title={stack.title} icon={stack.img} />))}</ul>
+                  </div>
+                </StackList>
+                </div>
+                <img src={gifTest} alt="" />
+                {/* <StackCards>
+                </StackCards> */}
               </div>
             </StackMargintop>
           </BackGroundImgDiv>
 
+
           <ProjectsArea id="projects">
-            <Container>
-              <ProjectAreaWrapperColumns>
+            <hr/>
+            <div>
+
                 <ProjectsAreaSocialMediaMessage>
-                  <Text as="h2" type="heading4" color="grey4">
+                  <Text as="h2" type="heading4" color="grey4" css={{marginTop: "7rem"}}>
                     Meu projetos:
                   </Text>
                   <Text as="p" type="body1" color="grey2">
@@ -293,8 +325,7 @@ export const Home = (): JSX.Element => {
                 <ProjectsAreaContent>
                   <Project />
                 </ProjectsAreaContent>
-              </ProjectAreaWrapperColumns>
-            </Container>
+            </div>
           </ProjectsArea>
           <Contacts />
         </main>
