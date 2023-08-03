@@ -1,81 +1,85 @@
-import { styled } from "@/styles/stitches.config";
-import { Flex } from "@/styles/Global";
-import { Text } from "@/styles/Text";
+import { changeColorAnimation } from "@/pages/home/style";
+import { styled } from "@stitches/react";
 
-export const ProjectStack = styled(Flex, {
-  margin: "1.25rem 0 1.25rem 0",
-  "@mobileLittle": {
-    flexDirection: "column",
-    alignItems: "self-start",
-  },
-});
-
-export const ProjectStackTech = styled("span", {
-  backgroundColor: "$grey1",
-  color: "$grey2",
-  padding: "0  0.5rem",
-  borderRadius: "$2",
-});
-
-export const ProjectLinks = styled(Flex, {
-  marginTop: "2.25rem",
-});
-
-export const ProjectLink = styled("a", {
-  fontSize: "1rem",
-  color: "$grey2",
-  fontWeight: "500",
-  marginRight: "$2",
+export const Projectslist = styled("ul", {
   display: "flex",
-  alignItems: "center",
-  lineHeight: "0",
-
-  "&:hover": {
-    color: "$grey5",
-  },
-
-  [`& svg`]: {
-    marginRight: "$1",
-  },
-});
-
-export const ProjectTitle = styled(Text, {});
-
-export const Project = styled("article", {
+  listStyle: "none",
+  gap: "3rem",
+  width: "100%",
   marginTop: "4rem",
-  [`&:first-child`]: {
-    [`& ${ProjectTitle}:first-child`]: {
+  flexWrap: "wrap",
+  "& .card": {
+    display: "flex",
+    flexDirection: "column",
+    width: "300px",
+    backgroundColor: "$grey1",
+    border: "solid 1px transparent",
+    borderRadius: "10px",
+    transition: '0.4s ease-out',
+    boxShadow: '0px 0px 13px 0px #ac9aed',
+    WebkitBoxShadow: '0px 0px 6px 0px #ac9aed',
+    MozBoxShadow: '0px 0px 6px 0px #ac9aed',
+    color: "White",
+
+    "& img": {
+      alignSelf: "center",
+      width: "95%",
+      height: "40%",
+      border: "solid 1px transparent",
+      borderRadius: "10px",
+      marginTop: "7px",
+      marginBottom: "1rem",
       position: "relative",
-      width: "max-content",
+    },
+    "& .info_container": {
+      width: "91%",
+      display: "flex",
+      flexDirection: "column",
+      margin: "0 auto",
+      marginTop: "7px",
+      gap: "1rem",
 
-      "@mobile": {
-        width: "auto",
-      },
+      "& p":{
+        fontSize: '0.8rem',
+        color: '$grey2',
+      }
+    },
+    "& .container_buttons": {
+      display: "flex",
+      width: "100%",
+      justifyContent: "center",
+      gap: "10%",
+      margin: "1rem 0rem 1.5rem 0rem",
 
-      "&::before": {
-        content: 'New',
-        position: "absolute",
-        top: "5px",
-        right: "-4rem",
-        width: "max-content",
-        height: "28px",
-        backgroundColor: "$brand1",
-        padding: "0px 8px",
-        borderRadius: "var(--radii-1)",
-        fontSize: "14px",
-        color: "var(--colors-whiteFixed)",
-        fontWeight: "400",
+      "& .div_button": {
         display: "flex",
+        flexDirection: "row",
         alignItems: "center",
-        justifyContent: "center",
-        fontFamily: "Inter",
+        gap: "0.5rem",
+        "& span": {
+          marginTop: "4px",
+          fontSize: "1.3rem",
+        },
 
-        "@mobile": {
-          letf: 0,
-          top: "-2.5rem",
-          right: "auto",
+        "& a": {
+          color: "White",
+        },
+
+        "&:hover": {
+          "& span": {
+            animation: `${changeColorAnimation} 2s infinite alternate`,
+          },
+          "& a": {
+            animation: `${changeColorAnimation} 2s infinite alternate`,
+          },
         },
       },
+    },
+    "&:hover": {
+      transform: 'translateY(-5%) scale(1.03)',
+      boxShadow: '0px 0px 13px 0px #4717F6',
+      WebkitBoxShadow: '0px 0px 23px 0px #4717F6',
+      MozBoxShadow: '0px 0px 23px 0px #4717F6',
     },
   },
 });

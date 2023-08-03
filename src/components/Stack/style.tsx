@@ -30,7 +30,8 @@ export const StackCard = styled("li", {
     fontWeight: "500",
     whiteSpace: "nowrap",
     color: "$grey5",
-    transition:"0.3s",
+    transition:"0.4s",
+    zIndex: "10",
 
     "&:before": {
       // content: "",

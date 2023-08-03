@@ -51,7 +51,7 @@ export const Footer = (): JSX.Element => {
             >
               <FaInstagram />
             </Button>
-            <Button
+            {/* <Button
               className="facebook"
               type="circle"
               as="a"
@@ -59,7 +59,7 @@ export const Footer = (): JSX.Element => {
               href={`https://fb.com/${userData.facebookUser}`}
             >
               <FaFacebookF />
-            </Button>
+            </Button> */}
             <Button
               className="linkedin"
               type="circle"

@@ -79,9 +79,9 @@ export const NavLinks = (): JSX.Element => {
       <Link type="btLink" as="a" color="grey4" href={`#home`}>
         Home
       </Link>
-      <Link type="btLink" as="a" color="grey4" href={`#about_me`}>
+      {/* <Link type="btLink" as="a" color="grey4" href={`#about_me`}>
         Sobre mim
-      </Link>
+      </Link> */}
       <Link type="btLink" as="a" color="grey4" href={`#projects`}>
         Projetos
       </Link>

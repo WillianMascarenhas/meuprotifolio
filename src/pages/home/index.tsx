@@ -13,6 +13,7 @@ import { BackData, DBData, FrontData, PlusData } from "@/utils/stackData";
 import { userData } from "@/utils/userData";
 
 import { FaGithub } from "react-icons/fa";
+import { BsArrowDownShort } from "react-icons/bs";
 
 // Page Style
 import {
@@ -23,7 +24,6 @@ import {
   // StackCards,
   ProjectsArea,
   ProjectsAreaSocialMediaMessage,
-  ProjectAreaWrapperColumns,
   ProjectsAreaContent,
   HeaderText,
   StackMargintop,
@@ -43,7 +43,7 @@ import { useEffect, useRef, useContext, MouseEvent } from "react";
 import Typed from "typed.js";
 import { MouseParallax, ScrollParallax } from "react-just-parallax";
 
-import gifTest from "../../public/static/img/background/developer-activity-animate.svg"
+import gifTest from "../../public/static/img/background/developer-activity-animate.svg";
 
 import myPhoto from "../../public/static/img/profile/PortfolioImg-removebg-preview-new.png";
 import myPhoto2 from "../../public/static/img/profile/Untitled Project_clipdrop-background-removal-new.png";
@@ -60,7 +60,6 @@ export const Home = (): JSX.Element => {
   const { loading, setLoading } = useContext(HomeContext);
 
   const textAnimated = useRef(null);
-
 
   useEffect(() => {
     if (loading) {
@@ -82,7 +81,7 @@ export const Home = (): JSX.Element => {
       setLoading(false);
     }, 1000);
   }, []);
-  
+
   return (
     <>
       {loading ? (
@@ -203,6 +202,9 @@ export const Home = (): JSX.Element => {
                 </HeaderButtonsArea>
               </HeaderContent>
             </Container>
+            <div className="arrow bounce">
+              <span><BsArrowDownShort fontSize={"2.6rem"}/></span>
+            </div>
           </Header>
           <BackGroundImgDiv>
             {/* <AboutMeArea id="about_me">
@@ -253,51 +255,83 @@ export const Home = (): JSX.Element => {
                       borderRadius: "20px",
                       padding: "2rem 2rem",
                     }}
-                  >
-                    Prazer, me chamo Willian! Sou baiano, tenho 22 anos e acabei
-                    de me formar como Desenvolvedor Full Stack pela Kenzie
-                    Academy. Iniciei o meu caminho com a formação em engenharia
-                    civil na Universidade Federal da Bahia, mas o que busco é
-                    seguir uma jornada profissional na área de tecnologia.
-                    Assim, mesmo já tendo adquirido uma base sólida de HTML,
-                    CSS, JavaScript, Typescript e frameworks como React e
-                    bibliotecas, busco seguir a minha jornada de aprendizado em
-                    ciência da computação e sempre me atualizando através de
-                    cursos licenciados. Me considero uma pessoa flexível,
-                    disposta e determinada, e estou ansioso para encontrar uma
-                    oportunidade para expandir e iniciar a minha jornada
-                    profissional.
+                  > Prazer, me chamo Willian! Sou baiano, tenho 22 anos e acabei de me formar como Desenvolvedor Full Stack pela Kenzie Academy. Iniciei o meu caminho com a formação em engenharia civil na Universidade Federal da Bahia, mas o que busco é seguir uma jornada profissional na área de tecnologia. Assim, mesmo já tendo adquirido uma base sólida de HTML, CSS, JavaScript, Typescript Node.js, Python e frameworks como React, Django e bibliotecas, busco seguir a minha jornada de aprendizado em ciência da computação e sempre me atualizando através de cursos licenciados. Me considero uma pessoa flexível, disposta e determinada, e estou ansioso para encontrar uma oportunidade para expandir e iniciar a minha jornada profissional.
                   </Text>
                 </div>
               </AboutMeConatiner>
               </div>
             </AboutMeArea> */}
 
-            <StackMargintop>
-            {/* <Container></Container> */}
+            <StackMargintop id="stack">
+              {/* <Container></Container> */}
               <div className="container">
                 <div>
-                <Text as="h2" type="heading3" color="grey4" css={{marginBottom: "3rem"}}>
-                  Minhas Stacks:
-                </Text>
-                <StackList>
-                  <div>
-                    <Text as="h3" type="heading4" color="grey4">Front</Text>
-                    <ul>{FrontData.map((stack, index) =>(<Stack key={index} title={stack.title} icon={stack.img} />))}</ul>
-                  </div>
-                  <div>
-                    <Text as="h3" type="heading4" color="grey4">Back</Text>
-                    <ul>{BackData.map((stack, index) =>(<Stack key={index} title={stack.title} icon={stack.img} />))}</ul>
-                  </div>
-                  <div>
-                    <Text as="h3" type="heading4" color="grey4">Banco de Dados</Text>
-                    <ul>{DBData.map((stack, index) =>(<Stack key={index} title={stack.title} icon={stack.img} />))}</ul>
-                  </div>
-                  <div>
-                    <Text as="h3" type="heading4" color="grey4">Ferramentas</Text>
-                    <ul>{PlusData.map((stack, index) =>(<Stack key={index} title={stack.title} icon={stack.img} />))}</ul>
-                  </div>
-                </StackList>
+                  <Text
+                    as="h2"
+                    type="heading3"
+                    color="grey4"
+                    css={{ marginBottom: "3rem" }}
+                  >
+                    Minhas Stacks:
+                  </Text>
+                  <StackList>
+                    <div>
+                      <Text as="h3" type="heading4" color="grey4">
+                        Front
+                      </Text>
+                      <ul>
+                        {FrontData.map((stack, index) => (
+                          <Stack
+                            key={index}
+                            title={stack.title}
+                            icon={stack.img}
+                          />
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <Text as="h3" type="heading4" color="grey4">
+                        Back
+                      </Text>
+                      <ul>
+                        {BackData.map((stack, index) => (
+                          <Stack
+                            key={index}
+                            title={stack.title}
+                            icon={stack.img}
+                          />
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <Text as="h3" type="heading4" color="grey4">
+                        Banco de Dados
+                      </Text>
+                      <ul>
+                        {DBData.map((stack, index) => (
+                          <Stack
+                            key={index}
+                            title={stack.title}
+                            icon={stack.img}
+                          />
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <Text as="h3" type="heading4" color="grey4">
+                        Ferramentas
+                      </Text>
+                      <ul>
+                        {PlusData.map((stack, index) => (
+                          <Stack
+                            key={index}
+                            title={stack.title}
+                            icon={stack.img}
+                          />
+                        ))}
+                      </ul>
+                    </div>
+                  </StackList>
                 </div>
                 <img src={gifTest} alt="" />
                 {/* <StackCards>
@@ -306,25 +340,22 @@ export const Home = (): JSX.Element => {
             </StackMargintop>
           </BackGroundImgDiv>
 
-
           <ProjectsArea id="projects">
-            <hr/>
-            <div>
-
-                <ProjectsAreaSocialMediaMessage>
-                  <Text as="h2" type="heading4" color="grey4" css={{marginTop: "7rem"}}>
-                    Meu projetos:
-                  </Text>
-                  <Text as="p" type="body1" color="grey2">
-                    Alguns dos meus projetos{" "}
-                    {/* <Text as="span" color="brand1">
-                  side projects
-                </Text> */}
-                  </Text>
-                </ProjectsAreaSocialMediaMessage>
-                <ProjectsAreaContent>
-                  <Project />
-                </ProjectsAreaContent>
+            <hr />
+            <div className="containerProjects">
+              <ProjectsAreaSocialMediaMessage>
+                <Text
+                  as="h2"
+                  type="heading4"
+                  color="grey4"
+                  css={{ marginTop: "7rem" }}
+                >
+                  Principais Projetos:
+                </Text>
+              </ProjectsAreaSocialMediaMessage>
+              <ProjectsAreaContent>
+                <Project />
+              </ProjectsAreaContent>
             </div>
           </ProjectsArea>
           <Contacts />
