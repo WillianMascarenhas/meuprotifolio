@@ -212,60 +212,61 @@ export const Home = (): JSX.Element => {
             </div>
           </Header>
           <BackGroundImgDiv>
-            {/* <AboutMeArea id="about_me">
+            <AboutMeArea id="about_me">
               <div className="container">
-              <Text
-                as="h2"
-                type="heading3"
-                color="grey5"
-                css={{
-                  marginTop: "125px",
-                  backgroundColor: "rgba(134, 142, 150, 1)",
-                  maxWidth: "20rem",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent:"center",
-                  padding: "7px",
-                  border: "solid 1px tranparent",
-                  borderRadius:"20px"
-                }}
-              >
-                Um pouco sobre mim
-              </Text>
+                <Text
+                  as="h2"
+                  type="heading3"
+                  color="grey5"
+                  css={{
+                    marginTop: "125px",
+                    backgroundColor: "rgba(134, 142, 150, 1)",
+                    maxWidth: "20rem",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: "7px",
+                    border: "solid 1px tranparent",
+                    borderRadius: "20px",
+                  }}
+                >
+                  Um pouco sobre mim
+                </Text>
 
-              <AboutMeConatiner>
-                <div className="image_container">
-                  <MouseParallax strength={0.05}>
-                    <UserImage
-                      src={myPhoto2}
-                      alt={userData.nameUser}
-                      title={userData.nameUser}
-                      width={"450px"}
-                      height={"450px"}
+                <AboutMeConatiner>
+                  <div className="text_container">
+                    <Text
+                      as="span"
+                      type="body1"
+                      color="grey5"
                       css={{
-                        "@mobile": { width: "450px", height: "450px" },
+                        marginTop: "-105px",
+                        border: "solid 2px",
+                        animation: `${changeBorderColorAnimation} 2s infinite alternate`,
+                        borderRadius: "20px",
+                        padding: "2rem 2rem",
                       }}
-                    />
-                  </MouseParallax>
-                </div>
-                <div className="text_container">
-                  <Text
-                    as="span"
-                    type="body1"
-                    color="grey5"
-                    css={{
-                      marginTop: "-105px",
-                      border: "solid 2px",
-                      animation: `${changeBorderColorAnimation} 2s infinite alternate`,
-                      borderRadius: "20px",
-                      padding: "2rem 2rem",
-                    }}
-                  > Prazer, me chamo Willian! Sou baiano, tenho 22 anos e acabei de me formar como Desenvolvedor Full Stack pela Kenzie Academy. Iniciei o meu caminho com a formação em engenharia civil na Universidade Federal da Bahia, mas o que busco é seguir uma jornada profissional na área de tecnologia. Assim, mesmo já tendo adquirido uma base sólida de HTML, CSS, JavaScript, Typescript Node.js, Python e frameworks como React, Django e bibliotecas, busco seguir a minha jornada de aprendizado em ciência da computação e sempre me atualizando através de cursos licenciados. Me considero uma pessoa flexível, disposta e determinada, e estou ansioso para encontrar uma oportunidade para expandir e iniciar a minha jornada profissional.
-                  </Text>
-                </div>
-              </AboutMeConatiner>
+                    >
+                      {" "}
+                      Prazer, me chamo Willian! Sou baiano, tenho 22 anos e
+                      acabei de me formar como Desenvolvedor Full Stack pela
+                      Kenzie Academy. Iniciei o meu caminho com a formação em
+                      engenharia civil na Universidade Federal da Bahia, mas o
+                      que busco é seguir uma jornada profissional na área de
+                      tecnologia. Assim, mesmo já tendo adquirido uma base
+                      sólida de HTML, CSS, JavaScript, Typescript Node.js,
+                      Python e frameworks como React, Django e bibliotecas,
+                      busco seguir a minha jornada de aprendizado em ciência da
+                      computação e sempre me atualizando através de cursos
+                      licenciados. Me considero uma pessoa flexível, disposta e
+                      determinada, e estou ansioso para encontrar uma
+                      oportunidade para expandir e iniciar a minha jornada
+                      profissional.
+                    </Text>
+                  </div>
+                </AboutMeConatiner>
               </div>
-            </AboutMeArea> */}
+            </AboutMeArea>
 
             <StackMargintop id="stack">
               {/* <Container></Container> */}

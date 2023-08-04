@@ -222,9 +222,6 @@ export const AboutMeConatiner = styled("div", {
     gap:"5rem",
   },
 
-  ["& .image_container"]:{
-    width: "30%",
-  },
 
   ["& .text_container"]:{
     width: "60%",
