@@ -210,6 +210,7 @@ export const AboutMeArea = styled('section', {
 
 
 export const AboutMeConatiner = styled("div", {
+  alignSelf: "center",
   display: "flex",
   justifyContent: "space-between",
   gap: "10%",
@@ -221,7 +222,6 @@ export const AboutMeConatiner = styled("div", {
     flexDirection:"column",
     gap:"5rem",
   },
-
 
   ["& .text_container"]:{
     width: "60%",

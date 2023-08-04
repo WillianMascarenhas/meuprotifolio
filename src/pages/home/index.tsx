@@ -220,7 +220,6 @@ export const Home = (): JSX.Element => {
                   color="grey5"
                   css={{
                     marginTop: "125px",
-                    backgroundColor: "rgba(134, 142, 150, 1)",
                     maxWidth: "20rem",
                     display: "flex",
                     alignItems: "center",
@@ -228,6 +227,8 @@ export const Home = (): JSX.Element => {
                     padding: "7px",
                     border: "solid 1px tranparent",
                     borderRadius: "20px",
+                    marginLeft: "54px",
+                    marginBottom:"74px"
                   }}
                 >
                   Um pouco sobre mim
