@@ -95,7 +95,6 @@ export const UserImage = styled("img", {
   "@mobile": {
     width: "19rem",
     height: "19rem",
-    marginLeft: "-25px"
   },
 });
 
@@ -295,7 +294,7 @@ export const StackMargintop = styled("div", {
       transform: "scaleX(-1)",
       "@mobile": {
         alignSelf:"center",
-        width:"50%"
+        width:"80%"
       },
     }
   }

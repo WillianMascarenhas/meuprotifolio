@@ -54,7 +54,6 @@ import BackGroundtop from "../../public/static/img/background/wave.png";
 import BackGroundBottom from "../../public/static/img/background/wave (1).png";
 
 export const Home = (): JSX.Element => {
-
   const gihubUrl = `https://github.com/${userData.githubUser}`;
   const portfolioUrl = `https://github.com/${userData.githubUser}/meuprotifolio`;
 
@@ -79,7 +78,7 @@ export const Home = (): JSX.Element => {
 
     setTimeout(() => {
       setLoading(false);
-    }, 2500);
+    }, 2000);
   }, [loading, setLoading]);
 
   return (
@@ -139,7 +138,11 @@ export const Home = (): JSX.Element => {
                           width={"350px"}
                           height={"350px"}
                           css={{
-                            "@mobile": { width: "350px", height: "350px" },
+                            "@mobile": {
+                              width: "350px",
+                              height: "350px",
+                              marginLeft: "-25px",
+                            },
                           }}
                         />
                         <Text
@@ -203,7 +206,9 @@ export const Home = (): JSX.Element => {
               </HeaderContent>
             </Container>
             <div className="arrow bounce">
-              <a href="#stack"><BsArrowDownShort fontSize={"2.6rem"} color="white"/></a>
+              <a href="#stack">
+                <BsArrowDownShort fontSize={"2.6rem"} color="white" />
+              </a>
             </div>
           </Header>
           <BackGroundImgDiv>
