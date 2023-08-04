@@ -54,6 +54,7 @@ import BackGroundtop from "../../public/static/img/background/wave.png";
 import BackGroundBottom from "../../public/static/img/background/wave (1).png";
 
 export const Home = (): JSX.Element => {
+
   const gihubUrl = `https://github.com/${userData.githubUser}`;
   const portfolioUrl = `https://github.com/${userData.githubUser}/meuprotifolio`;
 
@@ -62,9 +63,7 @@ export const Home = (): JSX.Element => {
   const textAnimated = useRef(null);
 
   useEffect(() => {
-    if (loading) {
-      null;
-    } else {
+    if (!loading) {
       const typedOptions = {
         strings: ["criar", "desenvolver", "participar de", "ajudar em"],
         typeSpeed: 130,
@@ -77,10 +76,11 @@ export const Home = (): JSX.Element => {
         typed.destroy();
       };
     }
+
     setTimeout(() => {
       setLoading(false);
     }, 2500);
-  }, []);
+  }, [loading, setLoading]);
 
   return (
     <>
