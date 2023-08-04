@@ -79,7 +79,7 @@ export const Home = (): JSX.Element => {
     }
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 2500);
   }, []);
 
   return (
@@ -203,7 +203,7 @@ export const Home = (): JSX.Element => {
               </HeaderContent>
             </Container>
             <div className="arrow bounce">
-              <span><BsArrowDownShort fontSize={"2.6rem"}/></span>
+              <a href="#stack"><BsArrowDownShort fontSize={"2.6rem"}/></a>
             </div>
           </Header>
           <BackGroundImgDiv>

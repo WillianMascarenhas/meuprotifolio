@@ -42,6 +42,7 @@ export const Projectslist = styled("ul", {
       "& p":{
         fontSize: '0.8rem',
         color: '$grey2',
+        height: "100px",
       }
     },
     "& .container_buttons": {

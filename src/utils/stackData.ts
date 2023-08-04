@@ -9,7 +9,9 @@ import {
   SiNextdotjs,
   SiNodedotjs,
   SiPython,
-  SiGithub
+  SiGithub,
+  SiFigma,
+  SiJira,
 } from "react-icons/si";
 
 export const FrontData = [
@@ -40,4 +42,8 @@ export const BackData = [
   { title: "Python", img: SiPython },
 ];
 export const DBData = [{ title: "PostgreSQL", img: SiPostgresql }];
-export const PlusData = [{ title: "Git", img: SiGithub }];
+export const PlusData = [
+  { title: "Git", img: SiGithub },
+  { title: "Jira", img: SiJira },
+  { title: "Figma", img: SiFigma },
+];

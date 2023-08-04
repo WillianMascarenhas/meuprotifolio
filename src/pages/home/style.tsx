@@ -21,7 +21,7 @@ export const Header = styled("header", {
 
   "& .arrow":{
     textAlign: 'center',
-    marginTop: '5%',
+    marginTop: '8%',
 
     "& span":{
       color: "$brand2"
@@ -261,10 +261,10 @@ export const StackSection = styled("div", {
 
 export const StackMargintop = styled("div", {
   marginBottom: "-18rem",
-  padding: "50px 0px",
   position:"relative",
   display: "flex",
   justifyContent:"center",
+  padding: "120px 0px",
 
   ["& .container"]:{
     display:"flex",
