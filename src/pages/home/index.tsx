@@ -203,7 +203,7 @@ export const Home = (): JSX.Element => {
               </HeaderContent>
             </Container>
             <div className="arrow bounce">
-              <a href="#stack"><BsArrowDownShort fontSize={"2.6rem"}/></a>
+              <a href="#stack"><BsArrowDownShort fontSize={"2.6rem"} color="white"/></a>
             </div>
           </Header>
           <BackGroundImgDiv>

@@ -22,9 +22,12 @@ export const Header = styled("header", {
   "& .arrow":{
     textAlign: 'center',
     marginTop: '8%',
+    "@mobile": {
+      marginTop: '20%',
+    },
 
     "& span":{
-      color: "$brand2"
+      color: "$brand1"
     }
   },
 
@@ -36,7 +39,7 @@ export const Header = styled("header", {
     backgroundPosition: "right -10% center",
   },
   "@mobile": {
-    padding: "9rem 0 6rem 0",
+    padding: "9rem 0 2rem 0",
     backgroundImage: `none`,
   },
   "@mobileLittle": {
@@ -61,16 +64,19 @@ export const HeaderContent = styled("div", {
 });
 
 export const HeaderButtonsArea = styled(Flex, {
+  gap:"1rem",
 
+  "@mobile": {
+    gap:"1rem",
+    marginTop: "$3",
+  },
   [`& ${Button}`]: {
-    marginRight: "$2",
     overflow: "hidden",
   },
 
   "@mobileButton": {
     [`& ${Button}`]: {
-      marginRight: "$2",
-      marginTop: "$3",
+      marginTop: "$2",
       overflow: "hidden",
       width: "100%",
     },
