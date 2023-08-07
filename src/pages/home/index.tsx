@@ -212,7 +212,7 @@ export const Home = (): JSX.Element => {
             </div>
           </Header>
           <BackGroundImgDiv>
-            <AboutMeArea id="about_me">
+            {/* <AboutMeArea id="about_me">
               <div className="container">
                 <Text
                   as="h2"
@@ -264,7 +264,7 @@ export const Home = (): JSX.Element => {
                   </div>
                 </AboutMeConatiner>
               </div>
-            </AboutMeArea>
+            </AboutMeArea> */}
 
             <StackMargintop id="stack">
               {/* <Container></Container> */}
