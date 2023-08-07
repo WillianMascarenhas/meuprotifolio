@@ -299,7 +299,7 @@ export const StackMargintop = styled("div", {
 export const StackList = styled("ul", {
   display:"flex",
   flexDirection: "column",
-  gap:"3rem",
+  gap:"1.5rem",
 
   ["& div"]:{
     display:"flex",
@@ -310,7 +310,7 @@ export const StackList = styled("ul", {
       display:"flex",
       flexWrap: "wrap",
       flexDirection: "row",
-      gap:"1.5rem"
+      gap:"1rem"
     }
   }
 });

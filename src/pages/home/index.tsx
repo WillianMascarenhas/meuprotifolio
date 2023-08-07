@@ -224,9 +224,6 @@ export const Home = (): JSX.Element => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    padding: "7px",
-                    border: "solid 1px tranparent",
-                    borderRadius: "20px",
                     marginLeft: "54px",
                     marginBottom:"74px"
                   }}
