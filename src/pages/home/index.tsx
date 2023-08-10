@@ -67,7 +67,7 @@ export const Home = (): JSX.Element => {
   useEffect(() => {
     AOS.init({
       offset: 200,
-      duration: 600,
+      duration: 800,
       delay: 100,
       easing: "ease-in-out-back",
     });
@@ -96,7 +96,7 @@ export const Home = (): JSX.Element => {
         <Loading />
       ) : (
         <main id="home">
-          <Header
+          <Header data-aos="fade-down" data-aos-easing="linear" data-aos-duration="800"
             css={{
               background:
                 "rgb(32,10,41) radial-gradient(circle, rgba(32,10,41,1) 0%, rgba(18,8,57,1) 100%)",
@@ -138,8 +138,7 @@ export const Home = (): JSX.Element => {
                       </Text>
                     </HeaderText>
                     <HeaderImg>
-                      {/* <MouseParallax> */}
-                      <ScrollParallax>
+                      {/* <ScrollParallax> */}
                         <figure>
                           <UserImage
                             src={myPhoto2}
@@ -147,13 +146,6 @@ export const Home = (): JSX.Element => {
                             title={userData.nameUser}
                             // width={"350px"}
                             // height={"350px"}
-                            css={{
-                              "@mobile": {
-                                width: "350px",
-                                height: "350px",
-                                marginLeft: "-25px",
-                              },
-                            }}
                           />
                         </figure>
                         <Text
@@ -163,8 +155,8 @@ export const Home = (): JSX.Element => {
                             marginTop:"1.2rem",
                             width: "100%",
                             "@mobile": {
-                              width: "284%",
-                              marginLeft: "114px",
+                              // width: "284%",
+                              // marginLeft: "114px",
                               marginTop: "25px",
                             },
                           }}
@@ -172,8 +164,7 @@ export const Home = (): JSX.Element => {
                         >
                           {userData.nameUser}
                         </Text>
-                      </ScrollParallax>
-                      {/* </MouseParallax> */}
+                      {/* </ScrollParallax> */}
                     </HeaderImg>
                   </HeaderTextImg>
                 </Flex>
@@ -280,7 +271,7 @@ export const Home = (): JSX.Element => {
             <StackMargintop id="stack">
               {/* <Container></Container> */}
               <div className="container">
-                <div data-aos="fade-right">
+                <div data-aos="fade-right" data-aos-once="true">
                   <Text
                     as="h2"
                     type="heading3"
@@ -348,7 +339,7 @@ export const Home = (): JSX.Element => {
                     </div>
                   </StackList>
                 </div>
-                <figure data-aos="fade-left">
+                <figure data-aos="fade-left" data-aos-once="true">
                   <img src={gifTest} alt="" />
                 </figure>
                 {/* <StackCards>

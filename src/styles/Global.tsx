@@ -71,6 +71,7 @@ export const globalStyles = globalCss({
   "body":{
     background:
     "rgb(32,10,41) radial-gradient(circle, rgba(32,10,41,1) 0%, rgba(18,8,57,1) 100%)",
+    overflowX:"clip"
   },
   "*": {
     margin: 0,

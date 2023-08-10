@@ -1,9 +1,18 @@
 import { Text } from "@/styles/Text";
 import { Circle, MainContainer, Shadow, Wrapper } from "./style";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Loading = () => {
+  useEffect(() =>{
+    AOS.init({
+      duration: 10,
+      easing: "ease-in-out-back",
+    });
+  },[])
   return (
-    <MainContainer>
+    <MainContainer data-aos="zoom-out">
       <Wrapper>
         <Circle className="circle" css={{ left: "15%" }} />
         <Circle

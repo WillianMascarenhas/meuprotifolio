@@ -98,19 +98,6 @@ const notSpinningPic = keyframes({
   },
 });
 
-export const UserImage = styled("img", {
-  opacity: 0.8,
-  objectFit: 'cover',
-  width: '110%',
-  height: '110%',
-  animation: `5s linear 0s infinite normal none running ${notSpinningPic}`,
-  transition: 'all 0.3s ease 0s',
-  
-  "@mobile": {
-    width: "19rem",
-    height: "19rem",
-  },
-});
 
 export const LogoImage = styled("img", {
   borderRadius: "50%",
@@ -159,9 +146,13 @@ export const HeaderImg = styled("div", {
   justifyContent:"center",
   marginTop: "-50px",
   marginBottom: "35px",
+  "@mobile": {
+    width: "90%",
+    margin:"0 auto"
+  },
 
   "& figure":{
-    marginLeft: "2.5rem",
+    // marginLeft: "2.5rem",
     width: '240px',
     height: '240px',
     borderRadius: '60% 40% 51% 49% / 44% 50% 50% 56%',
@@ -170,15 +161,27 @@ export const HeaderImg = styled("div", {
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden',
-    transition: 'all 0.3s ease 0s',
 
     "@mobile": {
       alignSelf:"center",
       marginBottom:"0rem",
-      width: "19rem",
-      height: "19rem",
+      width: "16rem",
+      height: "16rem",
     },
   }
+});
+
+export const UserImage = styled("img", {
+  objectFit: 'cover',
+  width: '110%',
+  height: '110%',
+  animation: `5s linear 0s infinite normal none running ${notSpinningPic}`,
+  
+  "@mobile": {
+    width: "300px",
+    height: "300px",
+    // marginLeft: "-25px",
+  },
 });
 
 import BackGroundImg1 from "../../public/static/img/background/low-poly-grid-haikei1.png";
@@ -428,6 +431,9 @@ export const Test = styled("div", {
   },
   "@ForText4": {
     height: "15rem",
+  },
+  "@ForText5": {
+    height: "19rem",
   },
 });
 
