@@ -163,7 +163,7 @@ export const HeaderImg = styled("div", {
     overflow: 'hidden',
 
     "@mobile": {
-      alignSelf:"center",
+      alignSelf:"start",
       marginBottom:"0rem",
       width: "16rem",
       height: "16rem",
