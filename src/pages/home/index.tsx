@@ -46,12 +46,15 @@ import { MouseParallax, ScrollParallax } from "react-just-parallax";
 import gifTest from "../../public/static/img/background/developer-activity-animate.svg";
 
 import myPhoto from "../../public/static/img/profile/PortfolioImg-removebg-preview-new.png";
-import myPhoto2 from "../../public/static/img/profile/Untitled Project_clipdrop-background-removal-new.png";
+import myPhoto2 from "../../public/static/img/profile/IMG_1932-new.png";
 import { Loading } from "@/components/Loading";
 import { HomeContext } from "../../providers/homeProvider";
 
 import BackGroundtop from "../../public/static/img/background/wave.png";
 import BackGroundBottom from "../../public/static/img/background/wave (1).png";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Home = (): JSX.Element => {
   const gihubUrl = `https://github.com/${userData.githubUser}`;
@@ -62,6 +65,12 @@ export const Home = (): JSX.Element => {
   const textAnimated = useRef(null);
 
   useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 600,
+      delay: 100,
+      easing: "ease-in-out-back",
+    });
     if (!loading) {
       const typedOptions = {
         strings: ["criar", "desenvolver", "participar de", "ajudar em"],
@@ -131,30 +140,32 @@ export const Home = (): JSX.Element => {
                     <HeaderImg>
                       {/* <MouseParallax> */}
                       <ScrollParallax>
-                        <UserImage
-                          src={myPhoto}
-                          alt={userData.nameUser}
-                          title={userData.nameUser}
-                          width={"350px"}
-                          height={"350px"}
-                          css={{
-                            "@mobile": {
-                              width: "350px",
-                              height: "350px",
-                              marginLeft: "-25px",
-                            },
-                          }}
-                        />
+                        <figure>
+                          <UserImage
+                            src={myPhoto2}
+                            alt={userData.nameUser}
+                            title={userData.nameUser}
+                            // width={"350px"}
+                            // height={"350px"}
+                            css={{
+                              "@mobile": {
+                                width: "350px",
+                                height: "350px",
+                                marginLeft: "-25px",
+                              },
+                            }}
+                          />
+                        </figure>
                         <Text
                           as="h2"
                           css={{
-                            marginLeft: "120px",
-                            marginTop: "-40px",
+                            marginLeft: "92px",
+                            marginTop:"1.2rem",
                             width: "100%",
                             "@mobile": {
                               width: "284%",
-                              marginLeft: "80px",
-                              marginTop: "-45px",
+                              marginLeft: "114px",
+                              marginTop: "25px",
                             },
                           }}
                           color="grey4"
@@ -269,7 +280,7 @@ export const Home = (): JSX.Element => {
             <StackMargintop id="stack">
               {/* <Container></Container> */}
               <div className="container">
-                <div>
+                <div data-aos="fade-right">
                   <Text
                     as="h2"
                     type="heading3"
@@ -337,15 +348,17 @@ export const Home = (): JSX.Element => {
                     </div>
                   </StackList>
                 </div>
-                <img src={gifTest} alt="" />
+                <figure data-aos="fade-left">
+                  <img src={gifTest} alt="" />
+                </figure>
                 {/* <StackCards>
                 </StackCards> */}
               </div>
             </StackMargintop>
           </BackGroundImgDiv>
 
-          <ProjectsArea id="projects">
-            <hr />
+          <ProjectsArea>
+            <hr id="projects" />
             <div className="containerProjects">
               <ProjectsAreaSocialMediaMessage>
                 <Text

@@ -21,7 +21,7 @@ export const Header = styled("header", {
 
   "& .arrow":{
     textAlign: 'center',
-    marginTop: '8%',
+    marginTop: '7.5%',
     "@mobile": {
       marginTop: '20%',
     },
@@ -89,8 +89,22 @@ export const HeaderButtonsArea = styled(Flex, {
   },
 });
 
+const notSpinningPic = keyframes({
+  '0%': {
+    transform: 'rotate(360deg)',
+  },
+  '100%': {
+    transform: 'rotate(0deg)',
+  },
+});
+
 export const UserImage = styled("img", {
-  borderRadius: "50%",
+  opacity: 0.8,
+  objectFit: 'cover',
+  width: '110%',
+  height: '110%',
+  animation: `5s linear 0s infinite normal none running ${notSpinningPic}`,
+  transition: 'all 0.3s ease 0s',
   
   "@mobile": {
     width: "19rem",
@@ -109,6 +123,8 @@ export const LogoImage = styled("img", {
 export const HeaderTextImg = styled("div", {
   display: "flex",
   gap: "4rem",
+  paddingTop:"20px",
+  marginTop: "50px",
   "@mobile": {
     gap: "0",
     flexDirection: "column-reverse",
@@ -127,6 +143,14 @@ export const HeaderText = styled("div", {
   },
 });
 
+const spinningPic = keyframes({
+  '0%': {
+    transform: 'rotate(0deg)',
+  },
+  '100%': {
+    transform: 'rotate(360deg)',
+  },
+});
 export const HeaderImg = styled("div", {
   width: "22%",
   display: "flex",
@@ -135,6 +159,26 @@ export const HeaderImg = styled("div", {
   justifyContent:"center",
   marginTop: "-50px",
   marginBottom: "35px",
+
+  "& figure":{
+    marginLeft: "2.5rem",
+    width: '240px',
+    height: '240px',
+    borderRadius: '60% 40% 51% 49% / 44% 50% 50% 56%',
+    animation: `5s linear 0s infinite normal none running ${spinningPic}`,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    overflow: 'hidden',
+    transition: 'all 0.3s ease 0s',
+
+    "@mobile": {
+      alignSelf:"center",
+      marginBottom:"0rem",
+      width: "19rem",
+      height: "19rem",
+    },
+  }
 });
 
 import BackGroundImg1 from "../../public/static/img/background/low-poly-grid-haikei1.png";
@@ -287,12 +331,15 @@ export const StackMargintop = styled("div", {
       },
     },
 
-    ["& img"]:{
+    ["& figure"]:{
       width:"45%",
-      transform: "scaleX(-1)",
+      "& img":{
+        width:"100%",
+        transform: "scaleX(-1)",
+      },
       "@mobile": {
         alignSelf:"center",
-        width:"80%"
+        width:"70%"
       },
     }
   }
