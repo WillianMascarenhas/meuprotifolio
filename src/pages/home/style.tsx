@@ -187,8 +187,9 @@ const animatedBackground = keyframes({
 export const BackGroundImgDiv = styled("div", {
 
   backgroundPosition: "0px 0px",
-  backgroundSize: "200px 200px",
-  animation: `${animatedBackground} 15s linear infinite alternate`,
+  // backgroundSize: "cover",
+  // backgroundRepeat: "no-repeat",
+  animation: `${animatedBackground} 20s linear infinite alternate`,
   animationFillMode: "forwards",
 });
 
