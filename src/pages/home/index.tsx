@@ -348,7 +348,7 @@ export const Home = (): JSX.Element => {
             </StackMargintop>
           </BackGroundImgDiv>
 
-          <ProjectsArea>
+          <ProjectsArea data-aos="fade-right" data-aos-once="true" data-aos-duration="800">
             <hr id="projects" />
             <div className="containerProjects">
               <ProjectsAreaSocialMediaMessage>

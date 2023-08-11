@@ -5,12 +5,23 @@ import { Projectslist } from "./style";
 
 import FastCommerce from "../../public/static/img/projects/hamburgueria.png";
 import DestinosKenzie from "../../public/static/img/projects/destinos-kenzie.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Project = (): JSX.Element => {
+
+  useEffect(()=>{
+      AOS.init({
+        offset: 200,
+        duration: 800,
+        delay: 100,
+        easing: "ease-in-out-back",
+      });
+  },[])
   return (
     <>
       <Projectslist>
-        <li className="card">
+        <li className="card" data-aos="zoom-out-up" data-aos-duration="1200" data-aos-once="true">
           <img
             className="img_container"
             src={DestinosKenzie}
@@ -44,7 +55,7 @@ export const Project = (): JSX.Element => {
           </div>
         </li>
 
-        <li className="card">
+        <li className="card" data-aos="zoom-out-up" data-aos-duration="1500" data-aos-once="true">
           <img
             className="img_container"
             src={FastCommerce}
