@@ -342,7 +342,7 @@ export const StackMargintop = styled("div", {
       },
       "@mobile": {
         alignSelf:"center",
-        width:"70%"
+        width:"90%"
       },
     }
   }

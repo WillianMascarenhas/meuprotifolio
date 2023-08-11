@@ -271,7 +271,7 @@ export const Home = (): JSX.Element => {
             <StackMargintop id="stack">
               {/* <Container></Container> */}
               <div className="container">
-                <div data-aos="fade-right" data-aos-once="true">
+                <div data-aos="fade-right" data-aos-once="true" data-aos-anchor="#stack">
                   <Text
                     as="h2"
                     type="heading3"
@@ -339,7 +339,7 @@ export const Home = (): JSX.Element => {
                     </div>
                   </StackList>
                 </div>
-                <figure data-aos="fade-left" data-aos-once="true">
+                <figure data-aos="fade-left" data-aos-once="true" data-aos-anchor="#stack">
                   <img src={gifTest} alt="" />
                 </figure>
                 {/* <StackCards>
@@ -348,7 +348,7 @@ export const Home = (): JSX.Element => {
             </StackMargintop>
           </BackGroundImgDiv>
 
-          <ProjectsArea data-aos="fade-right" data-aos-once="true" data-aos-duration="800">
+          <ProjectsArea data-aos="fade-right" data-aos-once="true" data-aos-duration="800" id="PA-A">
             <hr id="projects" />
             <div className="containerProjects">
               <ProjectsAreaSocialMediaMessage>

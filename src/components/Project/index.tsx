@@ -21,7 +21,7 @@ export const Project = (): JSX.Element => {
   return (
     <>
       <Projectslist>
-        <li className="card" data-aos="zoom-out-up" data-aos-duration="1200" data-aos-once="true">
+        <li className="card" data-aos="zoom-out-up" data-aos-duration="1200" data-aos-once="true" data-aos-anchor="#PA-A">
           <img
             className="img_container"
             src={DestinosKenzie}
@@ -55,7 +55,7 @@ export const Project = (): JSX.Element => {
           </div>
         </li>
 
-        <li className="card" data-aos="zoom-out-up" data-aos-duration="1500" data-aos-once="true">
+        <li className="card" data-aos="zoom-out-up" data-aos-duration="1500" data-aos-once="true" data-aos-anchor="#PA-A">
           <img
             className="img_container"
             src={FastCommerce}
