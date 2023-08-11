@@ -42,3 +42,16 @@ export const BoxFooter = styled("div", {
     alignItems:"center"
   },
 });
+
+export const UserImageFooter = styled("img", {
+  objectFit: 'cover',
+  width: '150px',
+  height: '150px',
+  borderRadius:"100%",
+  
+  "@mobile": {
+    width: "200px",
+    height: "200px",
+    // marginLeft: "-25px",
+  },
+});

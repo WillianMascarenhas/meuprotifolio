@@ -1,7 +1,6 @@
 import { Container, Flex } from "@/styles/Global";
 import { Text } from "@/styles/Text";
-import { BoxFooter, Footer as FooterWrapper } from "./style";
-import { UserImage } from "@/pages/home/style";
+import { BoxFooter, Footer as FooterWrapper, UserImageFooter } from "./style";
 import { userData } from "@/utils/userData";
 import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
 import { Button } from "@/styles/Buttons";
@@ -18,7 +17,7 @@ export const Footer = (): JSX.Element => {
       <FooterWrapper id="social-media">
         <Container>
           <Flex>
-            <UserImage
+            <UserImageFooter
               src={`https://github.com/${userData.githubUser}.png`}
               alt={userData.nameUser}
               title={userData.nameUser}
